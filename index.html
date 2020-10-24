@@ -1,25 +1,25 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+        <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/blood.css" id="theme">
-		<link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/blood.css" id="theme">
+        <link rel="stylesheet" href="css/main.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
               integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-markdown>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown>
                     <textarea data-template class="bg-light">
                         ## Презентация по теме:
                         ### Возможности фреймворка
@@ -27,7 +27,7 @@
                     </textarea>
                 </section>
 
-				<section>
+                <section>
                     <h3>Встраивание html тегов</h3>
                     <div class="d-flex justify-content-between">
                         <div data-markdown>
@@ -47,8 +47,8 @@
                     <h3>Квизы</h3>
                     <script data-quiz src="quizzes/dummy-quiz.js"></script>
                 </section>
-				
-				<section>
+                
+                <section>
                     <h3>Вставка таблиц</h3>
                     <div class="d-flex justify-content-between">
                         <div data-markdown class="bg-dark text-light">
@@ -120,7 +120,7 @@ def binary_search(elements, value):
                     </div>
                 </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <textarea data-template class="bg-light">
                         ### Вывод:
                         При всех своих неоспоримых плюсах создание презентаций при помощи reveal.js является достаточно трудоёмким.
@@ -130,20 +130,20 @@ def binary_search(elements, value):
                 </section>
 
 
-			</div>
-		</div>
+            </div>
+        </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
         <script src="plugin/math/math.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
                 math: {
                   mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
                   config: 'TeX-AMS_HTML-full',
@@ -151,18 +151,18 @@ def binary_search(elements, value):
                   TeX: { Macros: { RR: "{\\bf R}" } }
                 },
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
                 dependencies: [
                     { src: 'plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({}); } }
                 ]
-			});
+            });
 
             Reveal.on( 'slidechanged', event => {
                 if (event.currentSlide.querySelector(".MathJax_Preview") != null) {
                     setTimeout(function (){window.location.reload(false);}, 100);
                 }
             });
-		</script>
-	</body>
+        </script>
+    </body>
 </html>
