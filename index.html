@@ -1,63 +1,303 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>360 Deg Product Viewer</title>
-    <script src="pdt360DegViewer.js"></script>
-    <script>
-    document.write('<style>h1,h3,h4{text-align:center;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.viewer{position:relative;margin:20px 0}#pdtViewer{width:67%;margin:0 auto}#pdtViewer img{padding:40px 20px;border:.5px solid #eee;user-select:none;-moz-user-select:none}#dummy{display:none}.loader{width:100%;height:100%;position:absolute;background:rgba(0,0,0,.5);z-index:1;top:0}.three-bounce{text-align:center;font-size:26px;position:absolute;top:50%;left:50%}.three-bounce div{display:inline-block;width:18px;height:18px;border-radius:100%;background-color:#fff;-webkit-animation:bouncedelay 1.4s infinite ease-in-out both;animation:bouncedelay 1.4s infinite ease-in-out both}.three-bounce .one{-webkit-animation-delay:-0.32s;animation-delay:-0.32s}.three-bounce .two{-webkit-animation-delay:-0.16s;animation-delay:-0.16s}.btnDiv{text-align:center;margin:10px 0}.btnDiv button{margin:4px 8px;padding:20px;border:0;background-color:dodgerblue;color:#fff;border-radius:50%;font-size:16px;position:relative;cursor:pointer}.btnDiv button:active{background-color:#006dd8}.btnDiv button:hover{box-shadow:0 0 8px 1px #1b8eff}.btnDiv button:focus{outline:0}.btnDiv button:before,.btnDiv button.pause:after,.btnDiv button.plus:after,.btnDiv button.right:after,.btnDiv button.left:after{position:absolute;content:""}.btnDiv button.play:before,.btnDiv button.left:before,.btnDiv button.right:after{border:11px solid transparent;border-left-color:inherit;left:16px;top:24%}.btnDiv button.pause:before,.btnDiv button.pause:after{left:12px;top:28%;width:6px;height:19px;background:#fff}.btnDiv button.pause:after{right:12px;left:auto}.btnDiv button.stop:before{left:11px;top:25%;width:45%;height:50%;background:#fff}.btnDiv button.plus:before{left:17px;top:27%;background:#fff;width:6px;height:20px}.btnDiv button.plus:after,.btnDiv button.minus:before,.btnDiv button.right:before,.btnDiv button.left:after{left:9px;top:44%;background:#fff;width:22px;height:6px}.btnDiv button.left:after{left:11px;width:21px}.btnDiv button.right:before{width:20px}.btnDiv button.left:before,.btnDiv button.play.leftNav:before{border-right-color:inherit;border-left-color:transparent;left:-4px}.btnDiv button.right:after{left:22px}.btnDiv button.play.leftNav:before{left:1px;top:21%}.btnDiv.navDiv{text-align:left}.btnDiv.navDiv button{position:absolute;top:50%}.btnDiv.navDiv button.rightNav{right:0}img.draggable{cursor:e-resize}img.keys{cursor:pointer}@keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@-webkit-keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@media screen and (max-width:1030px){#pdtViewer img{width:100%}}@media screen and (max-width:992px){.hidePhone{display:none}.btnDiv{zoom:.7}}@media screen and (max-width:1250px){#pdtViewer img{padding:40px 0}#pdtViewer{width:95%}}@media screen and (max-width:767px){.fork{width:100px;position:absolute!important}h1{margin-top:60px}}</style>');
-    </script>
-</head>
-<body>
-    <h1>360 Degree Product Viewer</h1>
-    <h4>
-        <em>(Using Plain JavaScript)</em>
-    </h4>
-    <br />
-    <div id="pdtViewer">
-        <h3>Playable(controls) with Autoplay</h3>
-        <div id="car0"></div>
+<!DOCTYPE html>
+<html lang="ru">
 
-        <h3>Playable(controls) without Autoplay</h3>
-        <div id="car1"></div>
+    <head>
 
-        <h3>Autoplay without Playable(controls)</h3>
-        <div id="car2"></div>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
 
-        <h3>Drag over the image</h3>
-        <div id="car3"></div>
+        <style id='font-awesome-inline-css'>
+[data-font="FontAwesome"]:before {font-family: 'FontAwesome' !important;content: attr(data-icon) !important;speak: none !important;font-weight: normal !important;font-variant: normal !important;text-transform: none !important;line-height: 1 !important;font-style: normal !important;-webkit-font-smoothing: antialiased !important;-moz-osx-font-smoothing: grayscale !important;}
+        </style>
+        <link rel="stylesheet" href="main.css">
+        <script src="pdt360DegViewer.js"></script>
+        <script>
+        document.write('<style>h1,h3,h4{text-align:center;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.viewer{position:relative;margin:20px 0}#pdtViewer{width:67%;margin:0 auto}#pdtViewer img{padding:40px 20px;border:.5px solid #eee;user-select:none;-moz-user-select:none}#dummy{display:none}.loader{width:100%;height:100%;position:absolute;background:rgba(0,0,0,.5);z-index:1;top:0}.three-bounce{text-align:center;font-size:26px;position:absolute;top:50%;left:50%}.three-bounce div{display:inline-block;width:18px;height:18px;border-radius:100%;background-color:#fff;-webkit-animation:bouncedelay 1.4s infinite ease-in-out both;animation:bouncedelay 1.4s infinite ease-in-out both}.three-bounce .one{-webkit-animation-delay:-0.32s;animation-delay:-0.32s}.three-bounce .two{-webkit-animation-delay:-0.16s;animation-delay:-0.16s}.btnDiv{text-align:center;margin:10px 0}.btnDiv button{margin:4px 8px;padding:20px;border:0;background-color:#862e88;color:#fff;border-radius:50%;font-size:16px;position:relative;cursor:pointer}.btnDiv button:active{background-color:#006dd8}.btnDiv button:hover{box-shadow:0 0 8px 1px #862e88}.btnDiv button:focus{outline:0}.btnDiv button:before,.btnDiv button.pause:after,.btnDiv button.plus:after,.btnDiv button.right:after,.btnDiv button.left:after{position:absolute;content:""}.btnDiv button.play:before,.btnDiv button.left:before,.btnDiv button.right:after{border:11px solid transparent;border-left-color:inherit;left:16px;top:24%}.btnDiv button.pause:before,.btnDiv button.pause:after{left:12px;top:28%;width:6px;height:19px;background:#fff}.btnDiv button.pause:after{right:12px;left:auto}.btnDiv button.stop:before{left:11px;top:25%;width:45%;height:50%;background:#fff}.btnDiv button.plus:before{left:17px;top:27%;background:#fff;width:6px;height:20px}.btnDiv button.plus:after,.btnDiv button.minus:before,.btnDiv button.right:before,.btnDiv button.left:after{left:9px;top:44%;background:#fff;width:22px;height:6px}.btnDiv button.left:after{left:11px;width:21px}.btnDiv button.right:before{width:20px}.btnDiv button.left:before,.btnDiv button.play.leftNav:before{border-right-color:inherit;border-left-color:transparent;left:-4px}.btnDiv button.right:after{left:22px}.btnDiv button.play.leftNav:before{left:1px;top:21%}.btnDiv.navDiv{text-align:left}.btnDiv.navDiv button{position:absolute;top:50%}.btnDiv.navDiv button.rightNav{right:0}img.draggable{cursor:e-resize}img.keys{cursor:pointer}@keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@-webkit-keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@media screen and (max-width:1030px){#pdtViewer img{width:100%}}@media screen and (max-width:992px){.hidePhone{display:none}.btnDiv{zoom:.7}}@media screen and (max-width:1250px){#pdtViewer img{padding:40px 0}#pdtViewer{width:95%}}@media screen and (max-width:767px){.fork{width:100px;position:absolute!important}h1{margin-top:60px}}</style>');
+        </script>
 
-        <h3 class="hidePhone">Mouse Move over the image</h3>
-        <div id="car4"></div>
+    </head>
 
-        <h3>Click on the Navigation Buttons</h3>
-        <div id="car5"></div>
+    <body class="product-template-default single single-product postid-64658 theme-uveliria-theme  woocommerce woocommerce-page woocommerce-no-js">
+        <header class="main-header">
+        </header>
+        <main class='main-content' id="app">
+            <div class="product-card pt-5">
+                <div class="product-card-top pb-5">
+                    <div class="container-fluid w1500 d-flex flex-wrap justify-content-between">
+                        <div class="product-card-header d-flex align-items-center w-100">
+                            <a class="go-to-back btn-link text-decoration-none text-uppercase" href="#" onclick="history.back();return false;">Вернуться назад</a>
+                        </div>
+                        <div class="product-card-gallery d-flex flex-wrap position-relative">
+                            <div class="swiper-container gallery-thumbs">
+                                <div class="swiper-wrapper">
 
-        <h3 class="hidePhone">Click on the image and Keypress Navigation Arrows</h3>
-        <div id="car6"></div>
+                                    <div class="swiper-slide">
+                                    </div>
+                                    <div class="swiper-slide">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-container gallery-top">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide ratio">
+                                    <div id="pdtViewer">
+                                        <div id="car0"></div>
+                                    </div>
+                                    <div id="dummy"></div>
+                                    <script>
+                                        var path = './img/';
 
-        <h3 class="hidePhone">Scroll over the image</h3>
-        <div id="car7"></div>
-    </div>
-    <div id="dummy"></div>
-    <script>
-        var path = './img/';
+                                        pdt360DegViewer('car0', 216, path, 'webp', true, true, false, false, false, false, false);    //playable autoPlay
+                                    </script>
+                                    </div>
+                                </div>
+                            </d
+                            iv>
 
-        //pdt360DegViewer(imgDivid, count, path, imgType, playable, autoPlay, drag, mouseMove, buttonNavigation, keyNavigation, scroll);
+                            <div class="yith-wcwl-add-to-wishlist add-to-wishlist-64658  wishlist-fragment on-first-load" data-fragment-ref="64658" data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:true,&quot;show_exists&quot;:false,&quot;product_id&quot;:64658,&quot;parent_product_id&quot;:64658,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:true,&quot;browse_wishlist_text&quot;:&quot;&quot;,&quot;already_in_wishslist_text&quot;:&quot;&quot;,&quot;product_added_text&quot;:&quot;\u0422\u043e\u0432\u0430\u0440 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d!&quot;,&quot;heading_icon&quot;:&quot;fa-heart-o&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;shortcode&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
+                            </div>
 
-        pdt360DegViewer('car0', 216, path, 'png', true, true, false, false, false, false, false);    //playable autoPlay
-        pdt360DegViewer('car1', 216, path, 'png', true, false, false, false, false, false, false);   //playable
-        pdt360DegViewer('car2', 216, path, 'png', false, true, false, false, false, false, false);   //autoPlay
-        pdt360DegViewer('car3', 216, path, 'png', false, false, true, false, false, false, false);   //draggable
-        pdt360DegViewer('car4', 216, path, 'png', false, false, false, true, false, false, false);   //mouseMove
-        pdt360DegViewer('car5', 216, path, 'png', false, false, false, false, true, false, false);   //buttonNavigation
-        pdt360DegViewer('car6', 216, path, 'png', false, false, false, false, false, true, false);   //keys
-        pdt360DegViewer('car7', 216, path, 'png', false, false, false, false, false, false, true);   //scroll
-    </script>
-    <a class="fork" href="https://goo.gl/5uXVu2" title="Jeya Prakash's GitHub Profile" target="_blank" style="position: fixed;top: 0;right: 0;float:right;">
-        <img src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67"
-             alt="Fork me on GitHub" style="width:100%" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
-    </a>
-</body>
+                        </div>
+                        <div class="product-column_info">
+                            <div class="product-column_info-top d-flex align-items-center">
+                                <div class="js_product-tag" style="display: none; height: 0; width: 0;">A1004</div>
+                                <div class="product-tag text-uppercase">Артикул: A1004</div>
+                            </div>
+                            <h1 class="product-title def-title h3">A1004 Кольцо в желтой позолоте 750 пробы с фианитами</h1>
+                            <div class="product-prices d-flex flex-wrap align-items-center">
+                                <div class="current-price">999 ₽</div>
+                            </div>
+                            <a href="" class="product-buy _big text-uppercase btn d-flex justify-content-center align-items-center js_alModal" data-modal="js_modal-1">Заказать в один клик
+                                <i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.682 50.682" width="24px" height="24px">
+                                        <path d="M45.893 18.153c-.451-4.733-4.686-8.584-9.441-8.584h-2.995V6.768A6.776 6.776 0 0026.688 0h-3.647a6.776 6.776 0 00-6.769 6.768v2.801h-2.643c-4.769 0-8.944 3.869-9.307 8.624l-1.8 23.636c-.18 2.355.578 4.575 2.131 6.252 1.554 1.677 3.71 2.601 6.072 2.601h29.356c2.367 0 4.513-.926 6.042-2.607 1.529-1.682 2.247-3.905 2.022-6.262l-2.252-23.66zM19.273 6.769A3.773 3.773 0 0123.042 3h3.647a3.773 3.773 0 013.769 3.769V9.57H19.273V6.769zm24.631 39.287c-.953 1.049-2.311 1.626-3.822 1.626H10.726c-1.517 0-2.892-.582-3.871-1.64-.98-1.057-1.456-2.473-1.341-3.984l1.8-23.636c.246-3.228 3.079-5.853 6.315-5.853h2.643v3.383a2.71 2.71 0 103 0v-3.383h11.185v3.243a2.706 2.706 0 00-1.21 2.256c0 1.493 1.215 2.71 2.71 2.71s2.71-1.217 2.71-2.71c0-.94-.481-1.77-1.21-2.255v-3.244h2.995c3.25 0 6.146 2.633 6.455 5.869l2.253 23.659c.143 1.505-.303 2.911-1.256 3.959z" fill="#862e88" />
+                                    </svg>
+                                </i>
+                            </a>
+                            <div class="product-chars">
+                            </div>
+                            <div class="product-features">
+                                <div class="product-features-title">Описание:</div>
+                                <div class="product-features-text">  
+                                    <p>Кольцо в желтой позолоте 750 пробы с фианитами</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card-tabs w-100">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link border-0 m-0 text-uppercase active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Описание</button>
+                                    <button class="nav-link border-0 m-0 text-uppercase" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Отзывы</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <div class="tab-title">Описание изделия</div>
+                                    <div class="tab-pane-text">
+
+
+
+
+
+                                        <b>Страна:</b>
+                                        <p>
+                                        Китай                                                                        
+                                        </p>
+
+                                        <b>Размер:</b>
+                                        <p>
+                                        17.5,                                                                            18.5,                                                                            19.5,                                                                            20.5                                                                        
+                                        </p>
+
+                                        <b>Металл:</b>
+                                        <p>
+                                        Медь                                                                        
+                                        </p>
+
+                                        <b>Проба:</b>
+                                        <p>
+                                        750                                                                        
+                                        </p>
+
+                                        <b>Покрытие:</b>
+                                        <p>
+                                        Позолота                                                                        
+                                        </p>
+
+                                        <b>Камень вставки:</b>
+                                        <p>
+                                        Кубический Цирконий                                                                        
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <div class="glsr glsr-default" id="glsr_441a930b" data-shortcode='' data-assigned_posts='64658' data-hide='[&quot;assigned_links&quot;]' data-id='glsr_441a930b' data-pagination='ajax'><div class="glsr-reviews-wrap">
+                                            <div class="glsr-reviews">
+                                                <p class="glsr-no-margins">Отзывов ещё нет. Напишите первым.</p>
+                                            </div>
+
+                                        </div></div> 
+                                        <br>
+                                        <br>
+                                        <div class="glsr glsr-default" id="glsr_cd12b774" data-shortcode='' data-assigned_posts='64658' data-id='glsr_cd12b774'><div class="glsr-form-wrap">
+                                                <form class="glsr-review-form glsr-form" method="post" enctype="multipart/form-data">
+                                                    <input name="site-reviews[_action]" type="hidden" value="submit-review"><input name="site-reviews[_counter]" type="hidden" value=""><input name="site-reviews[_nonce]" type="hidden" value="0c942204aa"><input name="site-reviews[_post_id]" type="hidden" value="64658"><input name="site-reviews[_referer]" type="hidden" value="/product/a1004-kolco-v-zheltoj-pozolote-750-proby-s-fianitami-2/"><input name="site-reviews[assigned_posts]" type="hidden" value="64658"><input name="site-reviews[assigned_terms]" type="hidden" value=""><input name="site-reviews[assigned_users]" type="hidden" value=""><input name="site-reviews[excluded]" type="hidden" value=""><input name="site-reviews[form_id]" type="hidden" value="glsr_cd12b774"><input name="site-reviews[terms_exist]" type="hidden" value="1"><div class="glsr-field" style="display:none;"><label class="glsr-label glsr-label-text" for="site-reviews-8cf074af-glsr_cd12b774"><span>Ваш отзыв</span></label><input class="glsr-input glsr-input-text" id="site-reviews-8cf074af-glsr_cd12b774" name="site-reviews[8cf074af]" type="text" value=""></div><div class="glsr-field glsr-field-rating glsr-required" data-field="rating">
+                                                        <label class="glsr-label glsr-label-rating" for="site-reviews-rating-glsr_cd12b774"><span>Ваша общая оценка</span></label>
+                                                        <select class="glsr-select glsr-star-rating" id="site-reviews-rating-glsr_cd12b774" name="site-reviews[rating]" required><option selected value="">Выберите рейтинг</option><option value="5">5 звёзд</option><option value="4">4 звезды</option><option value="3">3 звезды</option><option value="2">2 звезды</option><option value="1">1 звезда</option></select>
+                                                        <div class="glsr-field-error"></div>
+                                                    </div><div class="glsr-field glsr-field-text glsr-required" data-field="title">
+                                                        <label class="glsr-label glsr-label-text" for="site-reviews-title-glsr_cd12b774"><span>Заголовок Вашего отзыва</span></label>
+                                                        <input class="glsr-input glsr-input-text" id="site-reviews-title-glsr_cd12b774" name="site-reviews[title]" type="text" placeholder="Подведите итог Вашего отзыва или выделите его особенности" required value="">
+                                                        <div class="glsr-field-error"></div>
+                                                    </div><div class="glsr-field glsr-field-textarea glsr-required" data-field="content">
+                                                        <label class="glsr-label glsr-label-textarea" for="site-reviews-content-glsr_cd12b774"><span>Ваш отзыв</span></label>
+                                                        <textarea class="glsr-textarea" id="site-reviews-content-glsr_cd12b774" name="site-reviews[content]" placeholder="Ваш отзыв" rows="5" required></textarea>
+                                                        <div class="glsr-field-error"></div>
+                                                    </div><div class="glsr-field glsr-field-text glsr-required" data-field="name">
+                                                        <label class="glsr-label glsr-label-text" for="site-reviews-name-glsr_cd12b774"><span>Ваше имя</span></label>
+                                                        <input class="glsr-input glsr-input-text" id="site-reviews-name-glsr_cd12b774" name="site-reviews[name]" type="text" placeholder="Ваше имя" required value="">
+                                                        <div class="glsr-field-error"></div>
+                                                    </div><div class="glsr-field glsr-field-email glsr-required" data-field="email">
+                                                        <label class="glsr-label glsr-label-email" for="site-reviews-email-glsr_cd12b774"><span>Ваша эл.почта</span></label>
+                                                        <input class="glsr-input glsr-input-email" id="site-reviews-email-glsr_cd12b774" name="site-reviews[email]" type="email" placeholder="Ваша эл.почта" required value="">
+                                                        <div class="glsr-field-error"></div>
+                                                    </div><div class="glsr-field glsr-field-choice glsr-required" data-field="terms">
+
+                                                        <span class="glsr-field-toggle">
+                                                            <span class="glsr-toggle">
+                                                                <label for="site-reviews-terms-glsr_cd12b774-1">Этот отзыв основан на моём опыте и выражает моё личное мнение.</label>
+                                                                <span class="glsr-toggle-switch">
+                                                                    <input class="glsr-input-toggle" id="site-reviews-terms-glsr_cd12b774-1" name="site-reviews[terms]" type="checkbox" value="1" required> &#8203; <!-- zero-space character used for alignment -->
+                                                                    <span class="glsr-toggle-track"></span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <div class="glsr-field-error"></div>
+                                                    </div>
+                                                    <div class="glsr-form-message">
+
+                                                    </div>
+                                                    <div data-field="submit-button">
+                                                        <button type="submit" class="glsr-button button btn btn-primary">
+                                                            <span class="glsr-button-loading"></span>
+                                                            <span class="glsr-button-text" data-text="Отправить отзыв">Отправить отзыв</span>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card-bottom">
+                    <div class="container w-1200">
+                    </div>
+                </div>
+                <div class="main-page-triggers">
+                    <div class="container w-1200">
+                        <div class="row gx-4 mx-auto">
+                            <div class="main-page-trigger text-center col-md-4">
+                                <div class="main-page-trigger-image">
+                                </div>
+                                <div class="main-page-trigger-name text-uppercase">ДОСТАВКА ИЗ ГЕРМАНИИ</div>
+                                <div class="main-page-trigger-text mx-auto">Мы доставляем наши товары из Германии и свой заказ вы можете получить на почте или выбрать доставку курьером</div>
+                            </div>
+                            <div class="main-page-trigger text-center col-md-4">
+                                <div class="main-page-trigger-image">
+                                </div>
+                                <div class="main-page-trigger-name text-uppercase">ОПЛАТА ПРИ ПОЛУЧЕНИИ</div>
+                                <div class="main-page-trigger-text mx-auto">Никакого риска! Вы платите только при получении</div>
+                            </div>
+                            <div class="main-page-trigger text-center col-md-4">
+                                <div class="main-page-trigger-image">
+                                </div>
+                                <div class="main-page-trigger-name text-uppercase">БОЛЬШОЙ ВЫБОР</div>
+                                <div class="main-page-trigger-text mx-auto">На "" представлены эксклюзивные коллекции, созданные по нашим экскизам</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="main-footer ">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row align-items-start">
+                        <div class="footer-item footer-contacts col-xl-3 col-md-5 col-sm-6 order-lg-0 order-md-4 order-sm-3 order-4">
+                            <div class="footer-item-name text-uppercase">Контакты</div>
+
+                            <div class="footer-messangers">
+
+                            </div>
+                        </div>
+
+                        <div class="footer-item footer-socials col-xxl-2 col-md-5 col-sm-6 order-lg-0 order-md-2 order-md-3 order-sm-4 order-3">
+                            <div class="footer-item-name text-uppercase">Мы в соц. сетях</div>
+                            <div class="socials d-flex">
+                            </div>
+                        </div>
+
+                        <div class="footer-item footer-menu col-xxl-4 col-lg-3 col-md-7 col-md-6 order-lg-0 order-1">
+                            <div class="footer-item-name text-uppercase">Меню</div>
+                            <ul class="list-unstyled">
+                                <li><a href="">Новости</a></li>
+                                <li><a href="">О нас</a></li>
+                                <li><a href="">Оферта</a></li>
+                                <li><a href="">Оплата и доставка</a></li>
+                                <li><a href="">Скидки для подписчиков</a></li>
+                                <li><a href="">Как определить размер?</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-item footer-menu col-xxl-3 col-lg-2 col-md-7 col-md-6 order-lg-0 order-md-3 order-2 ps-lg-5">
+                            <div class="footer-item-name text-uppercase">Каталог</div>
+                            <ul class="list-unstyled">
+                                <li><a href="">Кольца</a></li>
+                                <li><a href="">Серьги</a></li>
+                                <li><a href="">Браслеты</a></li>
+                                <li><a href="">Ожерелье</a></li>
+                                <li><a href="">Подвески</a></li>
+                                <li><a href="">Цепи</a></li>
+                                <li><a href="">Распродажа</a></li>
+                                <li><a href="">Премиум</a></li>
+                                <li><a href="">Новинки</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="under-footer">
+                <div class="container d-flex flex-wrap justify-content-between align-items-center">
+                    <div class="copyright">© 2021</div>
+                    <a href="" class="under-footer-link text-decoration-none">Карта сайта</a>
+                    <a href="" class="under-footer-link text-decoration-none">Политика конфиденциальности</a>
+                    <a href="http://is-art.ru/" target="_blank" class="is-art position-relative">
+                    </a>
+                </div>
+            </div>
+
+            <div class="overlay"></div>
+            <div class="alModal js_modal-1">
+                <span class="alModalClose js_alModalClose"></span>
+                <div class="alModalContent alModalContent--modal">
+                    <p>Цен на лот может быть ниже! Узнать актуальную цену и оформить заказ можно по телефону.
+                    Доставка по всей России!</p>
+                </div>
+            </div>
+    </body>
+        </footer>
+
+
+        <div id="glsr-modal" class="glsr-modal" aria-hidden="true">
+            <div class="glsr-modal__overlay" data-glsr-close tabindex="-1">
+                <div class="glsr-modal__dialog" aria-modal="true" data-glsr-modal role="dialog">
+                    <button class="glsr-modal__close" aria-label="Close modal" data-glsr-close></button>
+                    <div class="glsr-modal__content"></div>
+                </div>
+            </div>
+        </div>
 </html>
