@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="main.css">
         <script src="pdt360DegViewer.js"></script>
         <script>
-        document.write('<style>h1,h3,h4{text-align:center;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.viewer{position:relative;margin:20px 0}#pdtViewer{width:67%;margin:0 auto}#pdtViewer img{padding:40px 20px;border:.5px solid #eee;user-select:none;-moz-user-select:none}#dummy{display:none}.loader{width:100%;height:100%;position:absolute;background:rgba(0,0,0,.5);z-index:1;top:0}.three-bounce{text-align:center;font-size:26px;position:absolute;top:50%;left:50%}.three-bounce div{display:inline-block;width:18px;height:18px;border-radius:100%;background-color:#fff;-webkit-animation:bouncedelay 1.4s infinite ease-in-out both;animation:bouncedelay 1.4s infinite ease-in-out both}.three-bounce .one{-webkit-animation-delay:-0.32s;animation-delay:-0.32s}.three-bounce .two{-webkit-animation-delay:-0.16s;animation-delay:-0.16s}.btnDiv{text-align:center;margin:10px 0}.btnDiv button{margin:4px 8px;padding:20px;border:0;background-color:#862e88;color:#fff;border-radius:50%;font-size:16px;position:relative;cursor:pointer}.btnDiv button:active{background-color:#006dd8}.btnDiv button:hover{box-shadow:0 0 8px 1px #862e88}.btnDiv button:focus{outline:0}.btnDiv button:before,.btnDiv button.pause:after,.btnDiv button.plus:after,.btnDiv button.right:after,.btnDiv button.left:after{position:absolute;content:""}.btnDiv button.play:before,.btnDiv button.left:before,.btnDiv button.right:after{border:11px solid transparent;border-left-color:inherit;left:16px;top:24%}.btnDiv button.pause:before,.btnDiv button.pause:after{left:12px;top:28%;width:6px;height:19px;background:#fff}.btnDiv button.pause:after{right:12px;left:auto}.btnDiv button.stop:before{left:11px;top:25%;width:45%;height:50%;background:#fff}.btnDiv button.plus:before{left:17px;top:27%;background:#fff;width:6px;height:20px}.btnDiv button.plus:after,.btnDiv button.minus:before,.btnDiv button.right:before,.btnDiv button.left:after{left:9px;top:44%;background:#fff;width:22px;height:6px}.btnDiv button.left:after{left:11px;width:21px}.btnDiv button.right:before{width:20px}.btnDiv button.left:before,.btnDiv button.play.leftNav:before{border-right-color:inherit;border-left-color:transparent;left:-4px}.btnDiv button.right:after{left:22px}.btnDiv button.play.leftNav:before{left:1px;top:21%}.btnDiv.navDiv{text-align:left}.btnDiv.navDiv button{position:absolute;top:50%}.btnDiv.navDiv button.rightNav{right:0}img.draggable{cursor:e-resize}img.keys{cursor:pointer}@keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@-webkit-keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@media screen and (max-width:1030px){#pdtViewer img{width:100%}}@media screen and (max-width:992px){.hidePhone{display:none}.btnDiv{zoom:.7}}@media screen and (max-width:1250px){#pdtViewer img{padding:40px 0}#pdtViewer{width:95%}}@media screen and (max-width:767px){.fork{width:100px;position:absolute!important}h1{margin-top:60px}}</style>');
+            document.write('<style>h1,h3,h4{text-align:center;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.viewer{position:relative;margin:20px 0}#pdtViewer{width:67%;margin:0 auto}#pdtViewer img{padding:40px 20px;border:.5px solid #eee;user-select:none;-moz-user-select:none}#dummy{display:none}.loader{width:100%;height:100%;position:absolute;background:rgba(0,0,0,.5);z-index:1;top:0}.three-bounce{text-align:center;font-size:26px;position:absolute;top:50%;left:50%}.three-bounce div{display:inline-block;width:18px;height:18px;border-radius:100%;background-color:#fff;-webkit-animation:bouncedelay 1.4s infinite ease-in-out both;animation:bouncedelay 1.4s infinite ease-in-out both}.three-bounce .one{-webkit-animation-delay:-0.32s;animation-delay:-0.32s}.three-bounce .two{-webkit-animation-delay:-0.16s;animation-delay:-0.16s}.btnDiv{text-align:center;margin:10px 0}.btnDiv button{margin:4px 8px;padding:20px;border:0;background-color:#862e88;color:#fff;border-radius:50%;font-size:16px;position:relative;cursor:pointer}.btnDiv button:active{background-color:#006dd8}.btnDiv button:hover{box-shadow:0 0 8px 1px #862e88}.btnDiv button:focus{outline:0}.btnDiv button:before,.btnDiv button.pause:after,.btnDiv button.plus:after,.btnDiv button.right:after,.btnDiv button.left:after{position:absolute;content:""}.btnDiv button.play:before,.btnDiv button.left:before,.btnDiv button.right:after{border:11px solid transparent;border-left-color:inherit;left:16px;top:24%}.btnDiv button.pause:before,.btnDiv button.pause:after{left:12px;top:28%;width:6px;height:19px;background:#fff}.btnDiv button.pause:after{right:12px;left:auto}.btnDiv button.stop:before{left:11px;top:25%;width:45%;height:50%;background:#fff}.btnDiv button.plus:before{left:17px;top:27%;background:#fff;width:6px;height:20px}.btnDiv button.plus:after,.btnDiv button.minus:before,.btnDiv button.right:before,.btnDiv button.left:after{left:9px;top:44%;background:#fff;width:22px;height:6px}.btnDiv button.left:after{left:11px;width:21px}.btnDiv button.right:before{width:20px}.btnDiv button.left:before,.btnDiv button.play.leftNav:before{border-right-color:inherit;border-left-color:transparent;left:-4px}.btnDiv button.right:after{left:22px}.btnDiv button.play.leftNav:before{left:1px;top:21%}.btnDiv.navDiv{text-align:left}.btnDiv.navDiv button{position:absolute;top:50%}.btnDiv.navDiv button.rightNav{right:0}img.draggable{cursor:e-resize}img.keys{cursor:pointer}@keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@-webkit-keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@media screen and (max-width:1030px){#pdtViewer img{width:100%}}@media screen and (max-width:992px){.hidePhone{display:none}.btnDiv{zoom:.7}}@media screen and (max-width:1250px){#pdtViewer img{padding:40px 0}#pdtViewer{width:95%}}@media screen and (max-width:767px){.fork{width:100px;position:absolute!important}h1{margin-top:60px}}</style>');
         </script>
 
     </head>
@@ -42,187 +42,187 @@
                             <div class="swiper-container gallery-top">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide ratio">
-                                    <div id="pdtViewer">
-                                        <div id="car0"></div>
+                                        <div id="pdtViewer">
+                                            <div id="car0"></div>
+                                        </div>
+                                        <div id="dummy"></div>
+                                        <script>
+                                            var path = './img/';
+
+                                            pdt360DegViewer('car0', 215, path, 'webp', false, false, false, false, false, false, true);    //playable autoPlay
+                                        </script>
                                     </div>
-                                    <div id="dummy"></div>
-                                    <script>
-                                        var path = './img/';
-
-                                        pdt360DegViewer('car0', 216, path, 'webp', true, true, false, false, false, false, false);    //playable autoPlay
-                                    </script>
-                                    </div>
                                 </div>
-                            </d
-                            iv>
+                                </d
+                                iv>
 
-                            <div class="yith-wcwl-add-to-wishlist add-to-wishlist-64658  wishlist-fragment on-first-load" data-fragment-ref="64658" data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:true,&quot;show_exists&quot;:false,&quot;product_id&quot;:64658,&quot;parent_product_id&quot;:64658,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:true,&quot;browse_wishlist_text&quot;:&quot;&quot;,&quot;already_in_wishslist_text&quot;:&quot;&quot;,&quot;product_added_text&quot;:&quot;\u0422\u043e\u0432\u0430\u0440 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d!&quot;,&quot;heading_icon&quot;:&quot;fa-heart-o&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;shortcode&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-                            </div>
-
-                        </div>
-                        <div class="product-column_info">
-                            <div class="product-column_info-top d-flex align-items-center">
-                                <div class="js_product-tag" style="display: none; height: 0; width: 0;">A1004</div>
-                                <div class="product-tag text-uppercase">Артикул: A1004</div>
-                            </div>
-                            <h1 class="product-title def-title h3">A1004 Кольцо в желтой позолоте 750 пробы с фианитами</h1>
-                            <div class="product-prices d-flex flex-wrap align-items-center">
-                                <div class="current-price">999 ₽</div>
-                            </div>
-                            <a href="" class="product-buy _big text-uppercase btn d-flex justify-content-center align-items-center js_alModal" data-modal="js_modal-1">Заказать в один клик
-                                <i>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.682 50.682" width="24px" height="24px">
-                                        <path d="M45.893 18.153c-.451-4.733-4.686-8.584-9.441-8.584h-2.995V6.768A6.776 6.776 0 0026.688 0h-3.647a6.776 6.776 0 00-6.769 6.768v2.801h-2.643c-4.769 0-8.944 3.869-9.307 8.624l-1.8 23.636c-.18 2.355.578 4.575 2.131 6.252 1.554 1.677 3.71 2.601 6.072 2.601h29.356c2.367 0 4.513-.926 6.042-2.607 1.529-1.682 2.247-3.905 2.022-6.262l-2.252-23.66zM19.273 6.769A3.773 3.773 0 0123.042 3h3.647a3.773 3.773 0 013.769 3.769V9.57H19.273V6.769zm24.631 39.287c-.953 1.049-2.311 1.626-3.822 1.626H10.726c-1.517 0-2.892-.582-3.871-1.64-.98-1.057-1.456-2.473-1.341-3.984l1.8-23.636c.246-3.228 3.079-5.853 6.315-5.853h2.643v3.383a2.71 2.71 0 103 0v-3.383h11.185v3.243a2.706 2.706 0 00-1.21 2.256c0 1.493 1.215 2.71 2.71 2.71s2.71-1.217 2.71-2.71c0-.94-.481-1.77-1.21-2.255v-3.244h2.995c3.25 0 6.146 2.633 6.455 5.869l2.253 23.659c.143 1.505-.303 2.911-1.256 3.959z" fill="#862e88" />
-                                    </svg>
-                                </i>
-                            </a>
-                            <div class="product-chars">
-                            </div>
-                            <div class="product-features">
-                                <div class="product-features-title">Описание:</div>
-                                <div class="product-features-text">  
-                                    <p>Кольцо в желтой позолоте 750 пробы с фианитами</p>
-
+                                <div class="yith-wcwl-add-to-wishlist add-to-wishlist-64658  wishlist-fragment on-first-load" data-fragment-ref="64658" data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:true,&quot;show_exists&quot;:false,&quot;product_id&quot;:64658,&quot;parent_product_id&quot;:64658,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:true,&quot;browse_wishlist_text&quot;:&quot;&quot;,&quot;already_in_wishslist_text&quot;:&quot;&quot;,&quot;product_added_text&quot;:&quot;\u0422\u043e\u0432\u0430\u0440 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d!&quot;,&quot;heading_icon&quot;:&quot;fa-heart-o&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;shortcode&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
                                 </div>
+
                             </div>
-                        </div>
-                        <div class="product-card-tabs w-100">
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link border-0 m-0 text-uppercase active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Описание</button>
-                                    <button class="nav-link border-0 m-0 text-uppercase" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Отзывы</button>
+                            <div class="product-column_info">
+                                <div class="product-column_info-top d-flex align-items-center">
+                                    <div class="js_product-tag" style="display: none; height: 0; width: 0;">A1004</div>
+                                    <div class="product-tag text-uppercase">Артикул: A1004</div>
                                 </div>
-                            </nav>
-                            <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                    <div class="tab-title">Описание изделия</div>
-                                    <div class="tab-pane-text">
-
-
-
-
-
-                                        <b>Страна:</b>
-                                        <p>
-                                        Китай                                                                        
-                                        </p>
-
-                                        <b>Размер:</b>
-                                        <p>
-                                        17.5,                                                                            18.5,                                                                            19.5,                                                                            20.5                                                                        
-                                        </p>
-
-                                        <b>Металл:</b>
-                                        <p>
-                                        Медь                                                                        
-                                        </p>
-
-                                        <b>Проба:</b>
-                                        <p>
-                                        750                                                                        
-                                        </p>
-
-                                        <b>Покрытие:</b>
-                                        <p>
-                                        Позолота                                                                        
-                                        </p>
-
-                                        <b>Камень вставки:</b>
-                                        <p>
-                                        Кубический Цирконий                                                                        
-                                        </p>
+                                <h1 class="product-title def-title h3">A1004 Кольцо в желтой позолоте 750 пробы с фианитами</h1>
+                                <div class="product-prices d-flex flex-wrap align-items-center">
+                                    <div class="current-price">999 ₽</div>
+                                </div>
+                                <a href="" class="product-buy _big text-uppercase btn d-flex justify-content-center align-items-center js_alModal" data-modal="js_modal-1">Заказать в один клик
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.682 50.682" width="24px" height="24px">
+                                            <path d="M45.893 18.153c-.451-4.733-4.686-8.584-9.441-8.584h-2.995V6.768A6.776 6.776 0 0026.688 0h-3.647a6.776 6.776 0 00-6.769 6.768v2.801h-2.643c-4.769 0-8.944 3.869-9.307 8.624l-1.8 23.636c-.18 2.355.578 4.575 2.131 6.252 1.554 1.677 3.71 2.601 6.072 2.601h29.356c2.367 0 4.513-.926 6.042-2.607 1.529-1.682 2.247-3.905 2.022-6.262l-2.252-23.66zM19.273 6.769A3.773 3.773 0 0123.042 3h3.647a3.773 3.773 0 013.769 3.769V9.57H19.273V6.769zm24.631 39.287c-.953 1.049-2.311 1.626-3.822 1.626H10.726c-1.517 0-2.892-.582-3.871-1.64-.98-1.057-1.456-2.473-1.341-3.984l1.8-23.636c.246-3.228 3.079-5.853 6.315-5.853h2.643v3.383a2.71 2.71 0 103 0v-3.383h11.185v3.243a2.706 2.706 0 00-1.21 2.256c0 1.493 1.215 2.71 2.71 2.71s2.71-1.217 2.71-2.71c0-.94-.481-1.77-1.21-2.255v-3.244h2.995c3.25 0 6.146 2.633 6.455 5.869l2.253 23.659c.143 1.505-.303 2.911-1.256 3.959z" fill="#862e88" />
+                                        </svg>
+                                    </i>
+                                </a>
+                                <div class="product-chars">
+                                </div>
+                                <div class="product-features">
+                                    <div class="product-features-title">Описание:</div>
+                                    <div class="product-features-text">  
+                                        <p>Кольцо в желтой позолоте 750 пробы с фианитами</p>
 
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                    <div class="glsr glsr-default" id="glsr_441a930b" data-shortcode='' data-assigned_posts='64658' data-hide='[&quot;assigned_links&quot;]' data-id='glsr_441a930b' data-pagination='ajax'><div class="glsr-reviews-wrap">
-                                            <div class="glsr-reviews">
-                                                <p class="glsr-no-margins">Отзывов ещё нет. Напишите первым.</p>
-                                            </div>
+                            </div>
+                            <div class="product-card-tabs w-100">
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <button class="nav-link border-0 m-0 text-uppercase active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Описание</button>
+                                        <button class="nav-link border-0 m-0 text-uppercase" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Отзывы</button>
+                                    </div>
+                                </nav>
+                                <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="tab-title">Описание изделия</div>
+                                        <div class="tab-pane-text">
 
-                                        </div></div> 
-                                        <br>
-                                        <br>
-                                        <div class="glsr glsr-default" id="glsr_cd12b774" data-shortcode='' data-assigned_posts='64658' data-id='glsr_cd12b774'><div class="glsr-form-wrap">
-                                                <form class="glsr-review-form glsr-form" method="post" enctype="multipart/form-data">
-                                                    <input name="site-reviews[_action]" type="hidden" value="submit-review"><input name="site-reviews[_counter]" type="hidden" value=""><input name="site-reviews[_nonce]" type="hidden" value="0c942204aa"><input name="site-reviews[_post_id]" type="hidden" value="64658"><input name="site-reviews[_referer]" type="hidden" value="/product/a1004-kolco-v-zheltoj-pozolote-750-proby-s-fianitami-2/"><input name="site-reviews[assigned_posts]" type="hidden" value="64658"><input name="site-reviews[assigned_terms]" type="hidden" value=""><input name="site-reviews[assigned_users]" type="hidden" value=""><input name="site-reviews[excluded]" type="hidden" value=""><input name="site-reviews[form_id]" type="hidden" value="glsr_cd12b774"><input name="site-reviews[terms_exist]" type="hidden" value="1"><div class="glsr-field" style="display:none;"><label class="glsr-label glsr-label-text" for="site-reviews-8cf074af-glsr_cd12b774"><span>Ваш отзыв</span></label><input class="glsr-input glsr-input-text" id="site-reviews-8cf074af-glsr_cd12b774" name="site-reviews[8cf074af]" type="text" value=""></div><div class="glsr-field glsr-field-rating glsr-required" data-field="rating">
-                                                        <label class="glsr-label glsr-label-rating" for="site-reviews-rating-glsr_cd12b774"><span>Ваша общая оценка</span></label>
-                                                        <select class="glsr-select glsr-star-rating" id="site-reviews-rating-glsr_cd12b774" name="site-reviews[rating]" required><option selected value="">Выберите рейтинг</option><option value="5">5 звёзд</option><option value="4">4 звезды</option><option value="3">3 звезды</option><option value="2">2 звезды</option><option value="1">1 звезда</option></select>
-                                                        <div class="glsr-field-error"></div>
-                                                    </div><div class="glsr-field glsr-field-text glsr-required" data-field="title">
-                                                        <label class="glsr-label glsr-label-text" for="site-reviews-title-glsr_cd12b774"><span>Заголовок Вашего отзыва</span></label>
-                                                        <input class="glsr-input glsr-input-text" id="site-reviews-title-glsr_cd12b774" name="site-reviews[title]" type="text" placeholder="Подведите итог Вашего отзыва или выделите его особенности" required value="">
-                                                        <div class="glsr-field-error"></div>
-                                                    </div><div class="glsr-field glsr-field-textarea glsr-required" data-field="content">
-                                                        <label class="glsr-label glsr-label-textarea" for="site-reviews-content-glsr_cd12b774"><span>Ваш отзыв</span></label>
-                                                        <textarea class="glsr-textarea" id="site-reviews-content-glsr_cd12b774" name="site-reviews[content]" placeholder="Ваш отзыв" rows="5" required></textarea>
-                                                        <div class="glsr-field-error"></div>
-                                                    </div><div class="glsr-field glsr-field-text glsr-required" data-field="name">
-                                                        <label class="glsr-label glsr-label-text" for="site-reviews-name-glsr_cd12b774"><span>Ваше имя</span></label>
-                                                        <input class="glsr-input glsr-input-text" id="site-reviews-name-glsr_cd12b774" name="site-reviews[name]" type="text" placeholder="Ваше имя" required value="">
-                                                        <div class="glsr-field-error"></div>
-                                                    </div><div class="glsr-field glsr-field-email glsr-required" data-field="email">
-                                                        <label class="glsr-label glsr-label-email" for="site-reviews-email-glsr_cd12b774"><span>Ваша эл.почта</span></label>
-                                                        <input class="glsr-input glsr-input-email" id="site-reviews-email-glsr_cd12b774" name="site-reviews[email]" type="email" placeholder="Ваша эл.почта" required value="">
-                                                        <div class="glsr-field-error"></div>
-                                                    </div><div class="glsr-field glsr-field-choice glsr-required" data-field="terms">
 
-                                                        <span class="glsr-field-toggle">
-                                                            <span class="glsr-toggle">
-                                                                <label for="site-reviews-terms-glsr_cd12b774-1">Этот отзыв основан на моём опыте и выражает моё личное мнение.</label>
-                                                                <span class="glsr-toggle-switch">
-                                                                    <input class="glsr-input-toggle" id="site-reviews-terms-glsr_cd12b774-1" name="site-reviews[terms]" type="checkbox" value="1" required> &#8203; <!-- zero-space character used for alignment -->
-                                                                    <span class="glsr-toggle-track"></span>
+
+
+
+                                            <b>Страна:</b>
+                                            <p>
+                                            Китай                                                                        
+                                            </p>
+
+                                            <b>Размер:</b>
+                                            <p>
+                                            17.5,                                                                            18.5,                                                                            19.5,                                                                            20.5                                                                        
+                                            </p>
+
+                                            <b>Металл:</b>
+                                            <p>
+                                            Медь                                                                        
+                                            </p>
+
+                                            <b>Проба:</b>
+                                            <p>
+                                            750                                                                        
+                                            </p>
+
+                                            <b>Покрытие:</b>
+                                            <p>
+                                            Позолота                                                                        
+                                            </p>
+
+                                            <b>Камень вставки:</b>
+                                            <p>
+                                            Кубический Цирконий                                                                        
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                        <div class="glsr glsr-default" id="glsr_441a930b" data-shortcode='' data-assigned_posts='64658' data-hide='[&quot;assigned_links&quot;]' data-id='glsr_441a930b' data-pagination='ajax'><div class="glsr-reviews-wrap">
+                                                <div class="glsr-reviews">
+                                                    <p class="glsr-no-margins">Отзывов ещё нет. Напишите первым.</p>
+                                                </div>
+
+                                            </div></div> 
+                                            <br>
+                                            <br>
+                                            <div class="glsr glsr-default" id="glsr_cd12b774" data-shortcode='' data-assigned_posts='64658' data-id='glsr_cd12b774'><div class="glsr-form-wrap">
+                                                    <form class="glsr-review-form glsr-form" method="post" enctype="multipart/form-data">
+                                                        <input name="site-reviews[_action]" type="hidden" value="submit-review"><input name="site-reviews[_counter]" type="hidden" value=""><input name="site-reviews[_nonce]" type="hidden" value="0c942204aa"><input name="site-reviews[_post_id]" type="hidden" value="64658"><input name="site-reviews[_referer]" type="hidden" value="/product/a1004-kolco-v-zheltoj-pozolote-750-proby-s-fianitami-2/"><input name="site-reviews[assigned_posts]" type="hidden" value="64658"><input name="site-reviews[assigned_terms]" type="hidden" value=""><input name="site-reviews[assigned_users]" type="hidden" value=""><input name="site-reviews[excluded]" type="hidden" value=""><input name="site-reviews[form_id]" type="hidden" value="glsr_cd12b774"><input name="site-reviews[terms_exist]" type="hidden" value="1"><div class="glsr-field" style="display:none;"><label class="glsr-label glsr-label-text" for="site-reviews-8cf074af-glsr_cd12b774"><span>Ваш отзыв</span></label><input class="glsr-input glsr-input-text" id="site-reviews-8cf074af-glsr_cd12b774" name="site-reviews[8cf074af]" type="text" value=""></div><div class="glsr-field glsr-field-rating glsr-required" data-field="rating">
+                                                            <label class="glsr-label glsr-label-rating" for="site-reviews-rating-glsr_cd12b774"><span>Ваша общая оценка</span></label>
+                                                            <select class="glsr-select glsr-star-rating" id="site-reviews-rating-glsr_cd12b774" name="site-reviews[rating]" required><option selected value="">Выберите рейтинг</option><option value="5">5 звёзд</option><option value="4">4 звезды</option><option value="3">3 звезды</option><option value="2">2 звезды</option><option value="1">1 звезда</option></select>
+                                                            <div class="glsr-field-error"></div>
+                                                        </div><div class="glsr-field glsr-field-text glsr-required" data-field="title">
+                                                            <label class="glsr-label glsr-label-text" for="site-reviews-title-glsr_cd12b774"><span>Заголовок Вашего отзыва</span></label>
+                                                            <input class="glsr-input glsr-input-text" id="site-reviews-title-glsr_cd12b774" name="site-reviews[title]" type="text" placeholder="Подведите итог Вашего отзыва или выделите его особенности" required value="">
+                                                            <div class="glsr-field-error"></div>
+                                                        </div><div class="glsr-field glsr-field-textarea glsr-required" data-field="content">
+                                                            <label class="glsr-label glsr-label-textarea" for="site-reviews-content-glsr_cd12b774"><span>Ваш отзыв</span></label>
+                                                            <textarea class="glsr-textarea" id="site-reviews-content-glsr_cd12b774" name="site-reviews[content]" placeholder="Ваш отзыв" rows="5" required></textarea>
+                                                            <div class="glsr-field-error"></div>
+                                                        </div><div class="glsr-field glsr-field-text glsr-required" data-field="name">
+                                                            <label class="glsr-label glsr-label-text" for="site-reviews-name-glsr_cd12b774"><span>Ваше имя</span></label>
+                                                            <input class="glsr-input glsr-input-text" id="site-reviews-name-glsr_cd12b774" name="site-reviews[name]" type="text" placeholder="Ваше имя" required value="">
+                                                            <div class="glsr-field-error"></div>
+                                                        </div><div class="glsr-field glsr-field-email glsr-required" data-field="email">
+                                                            <label class="glsr-label glsr-label-email" for="site-reviews-email-glsr_cd12b774"><span>Ваша эл.почта</span></label>
+                                                            <input class="glsr-input glsr-input-email" id="site-reviews-email-glsr_cd12b774" name="site-reviews[email]" type="email" placeholder="Ваша эл.почта" required value="">
+                                                            <div class="glsr-field-error"></div>
+                                                        </div><div class="glsr-field glsr-field-choice glsr-required" data-field="terms">
+
+                                                            <span class="glsr-field-toggle">
+                                                                <span class="glsr-toggle">
+                                                                    <label for="site-reviews-terms-glsr_cd12b774-1">Этот отзыв основан на моём опыте и выражает моё личное мнение.</label>
+                                                                    <span class="glsr-toggle-switch">
+                                                                        <input class="glsr-input-toggle" id="site-reviews-terms-glsr_cd12b774-1" name="site-reviews[terms]" type="checkbox" value="1" required> &#8203; <!-- zero-space character used for alignment -->
+                                                                        <span class="glsr-toggle-track"></span>
+                                                                    </span>
                                                                 </span>
                                                             </span>
-                                                        </span>
-                                                        <div class="glsr-field-error"></div>
-                                                    </div>
-                                                    <div class="glsr-form-message">
+                                                            <div class="glsr-field-error"></div>
+                                                        </div>
+                                                        <div class="glsr-form-message">
 
-                                                    </div>
-                                                    <div data-field="submit-button">
-                                                        <button type="submit" class="glsr-button button btn btn-primary">
-                                                            <span class="glsr-button-loading"></span>
-                                                            <span class="glsr-button-text" data-text="Отправить отзыв">Отправить отзыв</span>
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div></div>
+                                                        </div>
+                                                        <div data-field="submit-button">
+                                                            <button type="submit" class="glsr-button button btn btn-primary">
+                                                                <span class="glsr-button-loading"></span>
+                                                                <span class="glsr-button-text" data-text="Отправить отзыв">Отправить отзыв</span>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card-bottom">
+                        <div class="container w-1200">
+                        </div>
+                    </div>
+                    <div class="main-page-triggers">
+                        <div class="container w-1200">
+                            <div class="row gx-4 mx-auto">
+                                <div class="main-page-trigger text-center col-md-4">
+                                    <div class="main-page-trigger-image">
+                                    </div>
+                                    <div class="main-page-trigger-name text-uppercase">ДОСТАВКА ИЗ ГЕРМАНИИ</div>
+                                    <div class="main-page-trigger-text mx-auto">Мы доставляем наши товары из Германии и свой заказ вы можете получить на почте или выбрать доставку курьером</div>
+                                </div>
+                                <div class="main-page-trigger text-center col-md-4">
+                                    <div class="main-page-trigger-image">
+                                    </div>
+                                    <div class="main-page-trigger-name text-uppercase">ОПЛАТА ПРИ ПОЛУЧЕНИИ</div>
+                                    <div class="main-page-trigger-text mx-auto">Никакого риска! Вы платите только при получении</div>
+                                </div>
+                                <div class="main-page-trigger text-center col-md-4">
+                                    <div class="main-page-trigger-image">
+                                    </div>
+                                    <div class="main-page-trigger-name text-uppercase">БОЛЬШОЙ ВЫБОР</div>
+                                    <div class="main-page-trigger-text mx-auto">На "" представлены эксклюзивные коллекции, созданные по нашим экскизам</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="product-card-bottom">
-                    <div class="container w-1200">
-                    </div>
-                </div>
-                <div class="main-page-triggers">
-                    <div class="container w-1200">
-                        <div class="row gx-4 mx-auto">
-                            <div class="main-page-trigger text-center col-md-4">
-                                <div class="main-page-trigger-image">
-                                </div>
-                                <div class="main-page-trigger-name text-uppercase">ДОСТАВКА ИЗ ГЕРМАНИИ</div>
-                                <div class="main-page-trigger-text mx-auto">Мы доставляем наши товары из Германии и свой заказ вы можете получить на почте или выбрать доставку курьером</div>
-                            </div>
-                            <div class="main-page-trigger text-center col-md-4">
-                                <div class="main-page-trigger-image">
-                                </div>
-                                <div class="main-page-trigger-name text-uppercase">ОПЛАТА ПРИ ПОЛУЧЕНИИ</div>
-                                <div class="main-page-trigger-text mx-auto">Никакого риска! Вы платите только при получении</div>
-                            </div>
-                            <div class="main-page-trigger text-center col-md-4">
-                                <div class="main-page-trigger-image">
-                                </div>
-                                <div class="main-page-trigger-name text-uppercase">БОЛЬШОЙ ВЫБОР</div>
-                                <div class="main-page-trigger-text mx-auto">На "" представлены эксклюзивные коллекции, созданные по нашим экскизам</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </main>
         <footer class="main-footer ">
             <div class="footer-content">
@@ -271,34 +271,10 @@
                     </div>
                 </div>
             </div>
-            <div class="under-footer">
-                <div class="container d-flex flex-wrap justify-content-between align-items-center">
-                    <div class="copyright">© 2021</div>
-                    <a href="" class="under-footer-link text-decoration-none">Карта сайта</a>
-                    <a href="" class="under-footer-link text-decoration-none">Политика конфиденциальности</a>
-                    <a href="http://is-art.ru/" target="_blank" class="is-art position-relative">
-                    </a>
-                </div>
-            </div>
 
-            <div class="overlay"></div>
-            <div class="alModal js_modal-1">
-                <span class="alModalClose js_alModalClose"></span>
-                <div class="alModalContent alModalContent--modal">
-                    <p>Цен на лот может быть ниже! Узнать актуальную цену и оформить заказ можно по телефону.
-                    Доставка по всей России!</p>
-                </div>
-            </div>
+
     </body>
         </footer>
 
 
-        <div id="glsr-modal" class="glsr-modal" aria-hidden="true">
-            <div class="glsr-modal__overlay" data-glsr-close tabindex="-1">
-                <div class="glsr-modal__dialog" aria-modal="true" data-glsr-modal role="dialog">
-                    <button class="glsr-modal__close" aria-label="Close modal" data-glsr-close></button>
-                    <div class="glsr-modal__content"></div>
-                </div>
-            </div>
-        </div>
 </html>
