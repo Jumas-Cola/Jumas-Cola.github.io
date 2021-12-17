@@ -13,7 +13,7 @@ class App {
       0.1,
       100
     );
-    this.camera.position.set(1, 1.7, 1);
+    this.camera.position.set(4, 1.7, 1);
     this.initRenderer();
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.target = new THREE.Vector3(0, 1.08, 0);
