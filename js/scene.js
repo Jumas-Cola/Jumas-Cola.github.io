@@ -110,7 +110,7 @@ class App {
   renderScene() {
     const scene = this.scene;
 
-    this.loader.load( 'models/a_class_room/scene.gltf', function ( gltf ) {
+    this.loader.load( 'models/cheeseburger.glb', function ( gltf ) {
 
       scene.add( gltf.scene );
 
