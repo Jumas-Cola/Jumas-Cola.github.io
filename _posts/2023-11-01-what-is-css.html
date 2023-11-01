@@ -1,0 +1,891 @@
+---
+layout: post
+title: 'Что такое CSS?'
+date: 2023-11-01 22:30:14 +0300
+categories: blog
+---
+
+<main id="content" class="main-content">
+  <article class="main-page-content" lang="ru">
+    <header><h1>Основы CSS</h1></header>
+    <div class="section-content">
+      <p>
+        CSS (Cascading Style Sheets) — это код, который вы используете для
+        стилизации вашей веб-страницы. <em>Основы CSS</em> помогут вам понять,
+        что вам нужно для начала работы. Мы ответим на такие вопросы как: Как
+        сделать мой текст черным или красным? Как сделать так, чтобы контент
+        появлялся в определённом месте на экране? Как украсить мою веб-страницу
+        с помощью фоновых изображений и цветов?
+      </p>
+    </div>
+    <section aria-labelledby="так_что_же_такое_css">
+      <h2 id="так_что_же_такое_css">
+        <a href="#так_что_же_такое_css">Так что же такое CSS?</a>
+      </h2>
+      <div class="section-content">
+        <p>
+          Как и HTML, CSS на самом деле не является языком программирования. Это
+          не язык разметки - это <em>язык таблицы стилей.</em> Это означает, что
+          он позволяет применять стили выборочно к элементам в документах HTML.
+          Например, чтобы выбрать <strong>все</strong> элементы абзаца на HTML
+          странице и изменить текст внутри них с чёрного на красный, вы должны
+          написать этот CSS:
+        </p>
+        <pre class="notranslate">
+p {
+  color: red;
+}
+</pre
+        >
+        <p>
+          Давайте попробуем: вставьте эти три строки CSS в новый файл в ваш
+          текстовый редактор, а затем сохраните файл как
+          <code>style.css</code> в вашей папке <code>styles</code>.
+        </p>
+        <p>
+          Но нам всё равно нужно применить CSS к нашему HTML документу. В
+          противном случае, CSS стиль не повлияет на то, как ваш браузер
+          отобразит HTML документ. (Если вы не следили за нашим проектом, то
+          прочитайте раздел
+          <a
+            href="/ru/docs/Learn/Getting_started_with_the_web/Dealing_with_files"
+            >Работа с файлами</a
+          >
+          и
+          <a href="/ru/docs/Learn/Getting_started_with_the_web/HTML_basics"
+            >Основы HTML</a
+          >, чтобы узнать, что вам нужно сделать в первую очередь.)
+        </p>
+        <ol>
+          <li>
+            Откройте ваш файл <code>index.html</code> и вставьте следующую
+            строку куда-нибудь в шапку, между <code>&lt;head&gt;</code> и
+            <code>&lt;/head&gt;</code> тегами:
+            <div class="code-example">
+              <pre
+                class="brush: html notranslate"
+                data-signature="aWFsGMbT7Fc4n9nNrHOWqCczZ+QJjh2q23XBtyjVnT0="
+              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>styles/style.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre>
+            </div>
+          </li>
+          <li>
+            Сохраните <code>index.html</code> и загрузите его в вашем браузере.
+            Вы должны увидеть что-то вроде этого:
+          </li>
+        </ol>
+        <p>
+          <img
+            src="/assets/images/website-screenshot-styled.png"
+            alt="A mozilla logo and some paragraphs. The paragraph text has been styled red by our css."
+            width="711"
+            height="832"
+            loading="lazy"
+          />Если текст вашего абзаца теперь красный, примите наши поздравления!
+          Вы написали свой первый успешный CSS!
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="анатомия_набора_правил_css">
+      <h3 id="анатомия_набора_правил_css">
+        <a href="#анатомия_набора_правил_css">Анатомия набора правил CSS</a>
+      </h3>
+      <div class="section-content">
+        <p>Давайте взглянем на вышеупомянутый CSS немного более подробно:</p>
+        <p>
+          <img
+            src="/assets/images/css-declaration-small.png"
+            alt=""
+            width="850"
+            height="480"
+            loading="lazy"
+          />
+        </p>
+        <p>
+          Вся структура называется <strong>набором правил</strong> (но зачастую
+          для краткости "правило"). Отметим также имена отдельных частей:
+        </p>
+        <dl>
+          <dt id="селектор_selector">
+            <a href="#%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80_selector"
+              >Селектор (Selector)</a
+            >
+          </dt>
+          <dd>
+            <p>
+              Имя HTML-элемента в начале набора правил. Он выбирает элемент(ы)
+              для применения стиля (в данном случае, элементы <code>p</code> ).
+              Для стилизации другого элемента, просто измените селектор.
+            </p>
+          </dd>
+          <dt id="объявление_declaration">
+            <a
+              href="#%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_declaration"
+              >Объявление (Declaration)</a
+            >
+          </dt>
+          <dd>
+            <p>
+              Единственное правило, например <code>color: red;</code> указывает,
+              какие из <strong>свойств</strong> элемента вы хотите стилизовать.
+            </p>
+          </dd>
+          <dt id="свойства_properties">
+            <a
+              href="#%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0_properties"
+              >Свойства (Properties)</a
+            >
+          </dt>
+          <dd>
+            <p>
+              Способы, которыми вы можете стилизовать определённый HTML-элемент
+              (в данном случае, <code>color</code> является свойством для
+              элементов
+              <a href="/ru/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a
+              >). В CSS вы выбираете, какие свойства вы хотите затронуть в вашем
+              правиле.
+            </p>
+          </dd>
+          <dt id="значение_свойства_property_value">
+            <a
+              href="#%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0_property_value"
+              >Значение свойства (Property value)</a
+            >
+          </dt>
+          <dd>
+            <p>
+              Справа от свойства, после двоеточия, у нас есть
+              <strong>значение свойства</strong>, которое выбирает одно из
+              множества возможных признаков для данного свойства (существует
+              множество значений <code>color</code>, помимо <code>red</code>).
+            </p>
+          </dd>
+        </dl>
+        <p>Обратите внимание на важные части синтаксиса:</p>
+        <ul>
+          <li>
+            Каждый набор правил (кроме селектора) должен быть обёрнут в фигурные
+            скобки (<code>{}</code>).
+          </li>
+          <li>
+            В каждом объявлении необходимо использовать двоеточие
+            (<code>:</code>), чтобы отделить свойство от его значений.
+          </li>
+          <li>
+            В каждом наборе правил вы должны использовать точку с запятой
+            (<code>;</code>), чтобы отделить каждое объявление от следующего.
+          </li>
+        </ul>
+        <p>
+          Таким образом, чтобы изменить несколько значений свойств сразу, вам
+          просто нужно написать их, разделяя точкой с запятой, например так:
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: css notranslate"
+            data-signature="z2BTPDnYXRXR42J15KPSSplg9V9DqGZnSVhjhAs6jSY="
+          ><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="выбор_нескольких_элементов">
+      <h3 id="выбор_нескольких_элементов">
+        <a href="#выбор_нескольких_элементов">Выбор нескольких элементов</a>
+      </h3>
+      <div class="section-content">
+        <p>
+          Вы также можете выбрать несколько элементов разного типа и применить
+          единый набор правил для всех из них. Добавьте несколько селекторов,
+          разделённых запятыми. Например:
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: css notranslate"
+            data-signature="c6a0c0/bAhdPw84t1dgdyM6fsmy2lsM1kCGuQLgTEdA="
+          ><code><span class="token selector">p,
+li,
+h1</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="разные_типы_селекторов">
+      <h3 id="разные_типы_селекторов">
+        <a href="#разные_типы_селекторов">Разные типы селекторов</a>
+      </h3>
+      <div class="section-content">
+        <p>
+          Существует множество различных типов селектора. Выше мы рассматривали
+          только <strong>селектор элементов</strong>, который выбирает все
+          элементы определённого типа в HTML документе. Но мы можем сделать
+          выбор более конкретным. Вот некоторые из наиболее распространённых
+          типов селекторов:
+        </p>
+        <figure class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Имя селектора</th>
+                <th>Что выбирает</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Селектор элемента (иногда называемый селектором тега или типа)
+                </td>
+                <td>Все HTML-элемент(ы) указанного типа.</td>
+                <td><code>p</code> Выбирает <code>&lt;p&gt;</code></td>
+              </tr>
+              <tr>
+                <td>ID селектор</td>
+                <td>
+                  Элемент на странице с указанным ID на данной HTML. Лучше всего
+                  использовать один элемент для каждого ID (и конечно один ID
+                  для каждого элемента), даже если вам разрешено использовать
+                  один и тот же ID для нескольких элементов.
+                </td>
+                <td>
+                  <code>#my-id</code> Выбирает
+                  <code>&lt;p id="my-id"&gt;</code> или
+                  <code>&lt;a id="my-id"&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>Селектор класса</td>
+                <td>
+                  Элемент(ы) на странице с указанным классом (множество
+                  экземпляров класса может объявляться на странице).
+                </td>
+                <td>
+                  <code>.my-class</code> Выбирает
+                  <code>&lt;p class="my-class"&gt;</code> и
+                  <code>&lt;a class="my-class"&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>Селектор атрибута</td>
+                <td>Элемент(ы) на странице с указанным атрибутом.</td>
+                <td>
+                  <code>img[src]</code> Выбирает
+                  <code>&lt;img src="myimage.png"&gt;</code> но не
+                  <code>&lt;img&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>Селектор псевдокласса</td>
+                <td>
+                  Указанные элемент(ы), но только в случае определённого
+                  состояния, например, при наведении курсора.
+                </td>
+                <td>
+                  <code>a:hover</code> Выбирает <code>&lt;a&gt;</code>, но
+                  только тогда, когда указатель мыши наведён на ссылку.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <p>
+          Существует ещё много селекторов для изучения, и вы можете найти более
+          подробный список в нашем
+          <a
+            href="/en-US/docs/Learn/CSS/Building_blocks/Selectors"
+            class="only-in-en-us"
+            title="Currently only available in English (US)"
+            >Руководстве селекторов <small>(en-US)<small></small></small></a
+          >.
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="шрифты_и_текст">
+      <h2 id="шрифты_и_текст"><a href="#шрифты_и_текст">Шрифты и текст</a></h2>
+      <div class="section-content">
+        <p>
+          Теперь, когда мы изучили некоторые основы CSS, давайте добавим ещё
+          несколько правил и информацию в наш файл <code>style.css</code>, чтобы
+          наш пример хорошо выглядел. Прежде всего, давайте сделаем, чтобы наши
+          шрифты и текст выглядели немного лучше.
+        </p>
+        <ol>
+          <li>
+            Прежде всего, вернитесь и найдите
+            <a
+              href="/ru/docs/Learn/Getting_started_with_the_web/What_will_your_website_look_like"
+              >вывод из Google Fonts</a
+            >, который вы уже где-то сохранили. Добавьте элемент
+            <a href="/ru/docs/Web/HTML/Element/link"
+              ><code>&lt;link&gt;</code></a
+            >
+            где-нибудь внутри шапки вашего <code>index.html</code> (снова, в
+            любом месте между тегами <code>&lt;head&gt;</code> и
+            <code>&lt;/head&gt;</code>). Это будет выглядеть примерно так:
+            <div class="code-example">
+              <pre
+                class="brush: html notranslate"
+                data-signature="GYBq2HsFvS365VGA1e0WmWOJAuVElZ/kzpI4WUrVeDE="
+              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span>
+  <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://fonts.googleapis.com/css?family=Open+Sans<span class="token punctuation">"</span></span>
+  <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
+  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre>
+            </div>
+            Этот код связывает вашу страницу с таблицой стилями, которая
+            загружает семейство шрифтов Open Sans вместе с вашей страницей и
+            позволяет вам применять их к вашим HTML-элементам используя свою
+            собственную таблицу стилей.
+          </li>
+          <li>
+            Затем, удалите существующее правило в вашем
+            <code>style.css</code> файле. Это был хороший тест, но красный
+            текст, на самом деле, не очень хорошо выглядит.
+          </li>
+          <li>
+            Добавьте следующие строки в нужное место, заменив строку
+            <code>placeholder</code> актуальной
+            <code>font-family</code> строкой, которую вы получили из Google
+            Fonts. (<code>font-family</code> просто означает, какой шрифт(ы) вы
+            хотите использовать для вашего текста). Это правило устанавливает
+            глобальный базовый шрифт и размер шрифта для всей страницы
+            (поскольку <code>&lt;html&gt;</code> является родительским элементом
+            для всей страницы, и все элементы внутри него наследуют такой же
+            <code>font-size</code> и <code>font-family</code>):
+            <div class="code-example">
+              <pre
+                class="brush: css notranslate"
+                data-signature="3fuxK1ROJ/qyJrPGL1YqhycCRWEluzfIFNMeNUhBfPU="
+              ><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span> <span class="token comment">/* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token property">placeholder</span><span class="token punctuation">:</span> здесь должно быть имя шрифта из Google fonts
+<span class="token punctuation">}</span>
+</code></pre>
+            </div>
+            <div class="notecard note" id="sect1">
+              <p>
+                <strong>Примечание:</strong> Все в CSS документе между
+                <code>/*</code> и <code>*/</code> является
+                <strong>CSS комментарием</strong>, который браузер игнорирует
+                при исполнении кода. Это место, где вы можете написать полезные
+                заметки о том, что вы делаете.
+              </p>
+            </div>
+          </li>
+          <li>
+            Теперь мы установим размер шрифта для элементов, содержащих текст
+            внутри HTML тела (<a
+              class="only-in-en-us"
+              title="Currently only available in English (US)"
+              href="/en-US/docs/Web/HTML/Element/Heading_Elements"
+              ><code>&lt;h1&gt;</code> <small>(en-US)</small></a
+            >, <a href="/ru/docs/Web/HTML/Element/li"><code>&lt;li&gt;</code></a
+            >, и <a href="/ru/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a
+            >). Мы также отцентрируем текст нашего заголовка и установим
+            некоторую высоту строки и расстояние между буквами в теле документа,
+            чтобы сделать его немного более удобным для чтения:
+            <div class="code-example">
+              <pre
+                class="brush: css notranslate"
+                data-signature="F82X8jOyKBVP8rEGw+cisEYq4Z3wmE15/8x+NBMKJ4E="
+              ><code><span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p,
+li</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+  <span class="token property">letter-spacing</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+            </div>
+          </li>
+        </ol>
+        <p>
+          Вы можете настроить значения <code>px</code> так, как вам нравится,
+          чтобы ваш дизайн выглядел так, как вы хотите, но, в общем, ваш дизайн
+          должен выглядеть вот так:
+        </p>
+        <p>
+          <img
+            src="/assets/images/website-screenshot-font-small.png"
+            alt="a mozilla logo and some paragraphs. a sans-serif font has been set, the font sizes, line height and letter spacing are adjusted, and the main page heading has been centered"
+            width="921"
+            height="1020"
+            loading="lazy"
+          />
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="блоки_блоки_и_ещё_раз_блоки">
+      <h2 id="блоки_блоки_и_ещё_раз_блоки">
+        <a href="#блоки_блоки_и_ещё_раз_блоки">Блоки, блоки и ещё раз блоки</a>
+      </h2>
+      <div class="section-content">
+        <p>
+          Одна вещь, которую вы заметите в написании CSS, заключается в том, что
+          многое из этого касается блоков - настройка их размера, цвета,
+          положения и т.д. Большинство HTML-элементов на странице можно
+          рассматривать как блоки, расположенные друг над другом.
+        </p>
+        <p>
+          <img
+            src="/assets/images/boxes.jpg"
+            alt="a big stack of boxes or crates sat on top of one another"
+            width="640"
+            height="463"
+            loading="lazy"
+          />
+        </p>
+        <p>
+          Не удивительно, макет CSS основан, главным образом, на
+          <em>блочной модели (box model)</em>. Каждый из блоков, занимающий
+          пространство на вашей странице имеет такие свойства, как:
+        </p>
+        <ul>
+          <li>
+            <code>padding</code>, пространство только вокруг контента (например,
+            вокруг абзаца текста)
+          </li>
+          <li>
+            <code>border</code>, сплошная линия, которая расположена рядом с
+            padding
+          </li>
+          <li>
+            <code>margin</code>, пространство вокруг внешней стороны элемента
+          </li>
+        </ul>
+        <p>
+          <img
+            src="/assets/images/box-model.png"
+            alt="three boxes sat inside one another. From outside to in they are labelled margin, border and padding"
+            width="574"
+            height="450"
+            loading="lazy"
+          />
+        </p>
+        <p>В этом разделе мы также используем:</p>
+        <ul>
+          <li><code>width</code> (ширину элемента)</li>
+          <li>
+            <code>background-color</code>, цвет позади контента и padding
+            элементов
+          </li>
+          <li><code>color</code>, цвет контента элемента (обычно текста)</li>
+          <li>
+            <code>text-shadow</code>: устанавливает тень на тексте внутри
+            элемента
+          </li>
+          <li>
+            <code>display</code>: устанавливает режим отображения элемента (пока
+            что не волнуйтесь об этом)
+          </li>
+        </ul>
+        <p>
+          Итак, давайте начнём и добавим больше CSS на нашей странице!
+          Продолжайте добавлять эти новые правила, расположенные в нижней части
+          страницы, и не бойтесь экспериментировать с изменением значений, чтобы
+          увидеть, как это работает.
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="изменение_цвета_страницы">
+      <h3 id="изменение_цвета_страницы">
+        <a href="#изменение_цвета_страницы">Изменение цвета страницы</a>
+      </h3>
+      <div class="section-content">
+        <div class="code-example">
+          <pre
+            class="brush: css notranslate"
+            data-signature="1nQJrZ9BHrr/hjvavsnmVzXOG2hbfk9oeCrj7qb9zVE="
+          ><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #00539f<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+        </div>
+        <p>
+          Это правило устанавливает цвет фона для всей страницы. Измените код
+          цвета сверху, на цвет который
+          <a
+            href="/ru/docs/Learn/Getting_started_with_the_web/What_will_your_website_look_like"
+            >вы выбрали при планировании вашего сайта</a
+          >.
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="разбираемся_с_телом">
+      <h3 id="разбираемся_с_телом">
+        <a href="#разбираемся_с_телом">Разбираемся с телом</a>
+      </h3>
+      <div class="section-content">
+        <div class="code-example">
+          <pre
+            class="brush: css notranslate"
+            data-signature="SlEXuoDZlwB0TuPjKY5pmuupgbg8kwlVT9XLMHpgcFM="
+          ><code><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ff9500<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0 20px 20px 20px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 5px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+        </div>
+        <p>
+          Теперь для
+          <a href="/ru/docs/Web/HTML/Element/body"><code>&lt;body&gt;</code></a>
+          элемента. Здесь есть немало деклараций, так что давайте пройдём через
+          них всех по одному:
+        </p>
+        <ul>
+          <li>
+            <code>width: 600px;</code> — заставляет тело быть всегда 600
+            пикселей в ширину.
+          </li>
+          <li>
+            <code>margin: 0 auto;</code> — когда вы устанавливаете два значения
+            для таких свойств как <code>margin</code> или <code>padding</code>,
+            первое значение элемента влияет на верхнюю <strong>и</strong> нижнюю
+            сторону (делает их <code>0</code> в данном случае), и второе
+            значение на левую <strong>и</strong> правую сторону (здесь,
+            <code>auto</code> является особым значением, которое делит доступное
+            пространство по горизонтали поровну слева и справа). Вы также можете
+            использовать один, три или четыре значения, как описано
+            <a href="/ru/docs/Web/CSS/margin#values">здесь</a>.
+          </li>
+          <li>
+            <code>background-color: #FF9500;</code> — как и прежде,
+            устанавливает цвет фона элемента. Я использовал красновато-оранжевый
+            для тела, в отличие от темно-синего цвета для
+            <a href="/ru/docs/Web/HTML/Element/html"
+              ><code>&lt;html&gt;</code></a
+            >
+            элемента, но не стесняйтесь и экспериментируйте.
+          </li>
+          <li>
+            <code>padding: 0 20px 20px 20px;</code> — у нас есть четыре
+            значения, установленные для padding, чтобы сделать немного
+            пространства вокруг нашего контента. В этот раз мы не устанавливаем
+            padding на верхней части тела, но делаем 20 пикселей слева, снизу и
+            справа. Значения устанавливаются сверху, справа, снизу, слева, в
+            таком порядке.
+          </li>
+          <li>
+            <code>border: 5px solid black;</code> — просто устанавливает
+            сплошную чёрную рамку шириной 5 пикселей со всех сторон тела.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section
+      aria-labelledby="позиционирование_и_стилизация_нашего_заголовка_главной_страницы"
+    >
+      <h3 id="позиционирование_и_стилизация_нашего_заголовка_главной_страницы">
+        <a
+          href="#позиционирование_и_стилизация_нашего_заголовка_главной_страницы"
+          >Позиционирование и стилизация нашего заголовка главной страницы</a
+        >
+      </h3>
+      <div class="section-content">
+        <div class="code-example">
+          <pre
+            class="brush: css notranslate"
+            data-signature="aufP1MZrekM9Z2BGEjKudUJUeRmG8TnnuX7WRZQMR1w="
+          ><code><span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px 0<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #00539f<span class="token punctuation">;</span>
+  <span class="token property">text-shadow</span><span class="token punctuation">:</span> 3px 3px 1px black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+        </div>
+        <p>
+          Вы, возможно, заметили, что есть ужасный разрыв в верхней части тела.
+          Это происходит, потому что браузеры применяют некоторый
+          <strong>стиль по умолчанию</strong> для элемента
+          <a
+            class="only-in-en-us"
+            title="Currently only available in English (US)"
+            href="/en-US/docs/Web/HTML/Element/Heading_Elements"
+            ><code>&lt;h1&gt;</code> <small>(en-US)</small></a
+          >
+          (по сравнению с другими), даже если вы не применяли какой-либо CSS
+          вообще! Это может звучать как плохая идея, но мы хотим, чтобы
+          веб-страница без стилей имела базовую читаемость. Чтобы избавиться от
+          разрыва, мы переопределили стиль по умолчанию, установив
+          <code>margin: 0;</code>.
+        </p>
+        <p>
+          Затем мы установили заголовку верхний и нижний padding на 20 пикселей,
+          и сделали текст заголовка того же цвета, как и цвет фона html.
+        </p>
+        <p>
+          Здесь, мы использовали одно довольно интересное свойство - это
+          <code>text-shadow</code>, которое применяет тень к текстовому контенту
+          элемента. Оно имеет следующие четыре значения:
+        </p>
+        <ul>
+          <li>
+            Первое значение пикселей задаёт
+            <strong>горизонтальное смещение</strong> тени от текста — как далеко
+            она движется поперёк: отрицательное значение должно двигать её
+            влево.
+          </li>
+          <li>
+            Второе значение пикселей задаёт
+            <strong>вертикальное смещение</strong> тени от текста — как далеко
+            она движется вниз, в этом примере: отрицательное значение должно
+            переместить её вверх.
+          </li>
+          <li>
+            Третье значение пикселей задаёт
+            <strong>радиус размытия</strong> тени — большее значение будет
+            означать более размытую тень.
+          </li>
+          <li>Четвёртое значение задаёт основной цвет тени.</li>
+        </ul>
+        <p>
+          И вновь попробуйте поэкспериментировать с различными значениями, чтобы
+          посмотреть, что вы можете придумать.
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="центрирование_изображения">
+      <h3 id="центрирование_изображения">
+        <a href="#центрирование_изображения">Центрирование изображения</a>
+      </h3>
+      <div class="section-content">
+        <div class="code-example">
+          <pre
+            class="brush: css notranslate"
+            data-signature="TjCLtaQfPnuF7OR6Zz+J1EWnbm/OT9FtdvuUXuWZo/w="
+          ><code><span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+        </div>
+        <p>
+          В заключение, мы отцентрируем изображение, чтобы оно лучше выглядело.
+          Мы можем использовать <code>margin: 0 auto</code> уловку снова, как мы
+          это делали раньше для body, но мы также должны сделать кое-что ещё.
+          Элемент
+          <a href="/ru/docs/Web/HTML/Element/body"><code>&lt;body&gt;</code></a>
+          является <strong>блочным</strong>, это значит, что он занимает всю
+          ширину страницы и может иметь margin и другие значения отступов,
+          применяемых к нему. Изображения, наоборот, являются
+          <strong>строчными</strong> элементами, то есть они этого не могут.
+          Таким образом, чтобы применить margin к изображению, мы должны дать
+          изображению блочное поведение с помощью <code>display: block;</code>.
+        </p>
+        <div class="notecard note" id="sect2">
+          <p>
+            <strong>Примечание:</strong> Приведённые выше инструкции
+            предполагают, что вы используете изображение меньшей ширины, чем
+            заданная для
+            <a href="/ru/docs/Web/HTML/Element/body"
+              ><code>&lt;body&gt;</code></a
+            >
+            (600px). Если ваше изображение больше, тогда оно выйдет за границы
+            <a href="/ru/docs/Web/HTML/Element/body"
+              ><code>&lt;body&gt;</code></a
+            >
+            и займёт пространство страницы. Чтобы исправить это, вы можете: 1)
+            уменьши ширину изображения используя
+            <a
+              href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80"
+              class="external"
+              target="_blank"
+              >графический редактор</a
+            >, или 2) изменить размер изображения используя CSS путём установки
+            свойства <a href="/ru/docs/Web/CSS/width"><code>width</code></a> для
+            <code>&lt;img&gt;</code> меньше, чем у
+            <a href="/ru/docs/Web/HTML/Element/body"
+              ><code>&lt;body&gt;</code></a
+            >.
+          </p>
+        </div>
+        <div class="notecard note" id="sect3">
+          <p>
+            <strong>Примечание:</strong> Не стоит беспокоиться, если вы ещё не
+            понимаете <code>display: block;</code> и различия между
+            блочным/строчным. Вы поймёте, когда будете изучать CSS более
+            подробно. Вы можете узнать больше о различных доступных значениях
+            display на нашей странице о свойстве
+            <a href="/ru/docs/Web/CSS/display">display</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="заключение">
+      <h2 id="заключение"><a href="#заключение">Заключение</a></h2>
+      <div class="section-content">
+        <p>
+          Если вы следовали всем инструкциям в этой статье, вы должны получить
+          страницу, которая выглядит примерно так (вы также можете
+          <a
+            href="https://mdn.github.io/beginner-html-site-styled/"
+            class="external"
+            target="_blank"
+            >посмотреть нашу версию здесь</a
+          >):
+        </p>
+        <p>
+          Если вы застряли, вы всегда можете сравнить свою работу с нашим
+          <a
+            href="https://github.com/mdn/beginner-html-site-styled/blob/gh-pages/styles/style.css"
+            class="external"
+            target="_blank"
+            >готовым примером кода на Github</a
+          >.
+        </p>
+        <p>
+          Здесь мы узнали только самую поверхность CSS. Чтобы узнать больше,
+          перейдите на нашу
+          <a href="/ru/docs/Learn/CSS">страницу изучения CSS</a>.
+        </p>
+        <ul class="prev-next">
+          <li>
+            <a
+              class="button secondary"
+              href="/ru/docs/Learn/Getting_started_with_the_web/HTML_basics"
+              ><span class="button-wrap"> Назад </span></a
+            >
+          </li>
+          <li>
+            <a
+              class="button secondary"
+              href="/ru/docs/Learn/Getting_started_with_the_web"
+              ><span class="button-wrap">
+                Обзор: Getting started with the web</span
+              ></a
+            >
+          </li>
+          <li>
+            <a
+              class="button secondary"
+              href="/ru/docs/Learn/Getting_started_with_the_web/JavaScript_basics"
+              ><span class="button-wrap"> Далее </span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section aria-labelledby="в_этом_модуле">
+      <h2 id="в_этом_модуле"><a href="#в_этом_модуле">В этом модуле</a></h2>
+      <div class="section-content">
+        <ul>
+          <li>
+            <a
+              href="/ru/docs/Learn/Getting_started_with_the_web/Installing_basic_software"
+              >Установка базового программного обеспечения</a
+            >
+          </li>
+          <li>
+            <a
+              href="/ru/docs/Learn/Getting_started_with_the_web/What_will_your_website_look_like"
+              >Каким должен быть ваш веб-сайт?</a
+            >
+          </li>
+          <li>
+            <a
+              href="/ru/docs/Learn/Getting_started_with_the_web/Dealing_with_files"
+              >Работа с файлами</a
+            >
+          </li>
+          <li>
+            <a href="/ru/docs/Learn/Getting_started_with_the_web/HTML_basics"
+              >Основы HTML</a
+            >
+          </li>
+          <li>
+            <a
+              href="/assets/images"
+              aria-current="page"
+              >Основы CSS</a
+            >
+          </li>
+          <li>
+            <a
+              href="/ru/docs/Learn/Getting_started_with_the_web/JavaScript_basics"
+              >Основы JavaScript</a
+            >
+          </li>
+          <li>
+            <a
+              href="/ru/docs/Learn/Getting_started_with_the_web/Publishing_your_website"
+              >Публикация вашего веб-сайта</a
+            >
+          </li>
+          <li>
+            <a
+              href="/ru/docs/Learn/Getting_started_with_the_web/How_the_Web_works"
+              >Как работает Веб</a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+    <aside class="metadata">
+      <div class="metadata-content-container">
+        <div id="on-github" class="on-github">
+          <h3>Found a content problem with this page?</h3>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/mdn/translated-content/edit/main/files/ru/learn/getting_started_with_the_web/css_basics/index.md"
+                title="This will take you to GitHub, where you'll need to sign in first."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Edit the page on GitHub</a
+              >.
+            </li>
+            <li>
+              <a
+                href="https://github.com/mdn/translated-content/issues/new?template=page-report-ru.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fru%2Fdocs%2FLearn%2FGetting_started_with_the_web%2FCSS_basics&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60ru%2Flearn%2Fgetting_started_with_the_web%2Fcss_basics%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fru%2Fdocs%2FLearn%2FGetting_started_with_the_web%2FCSS_basics%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Ftranslated-content%2Fblob%2Fmain%2Ffiles%2Fru%2Flearn%2Fgetting_started_with_the_web%2Fcss_basics%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Ftranslated-content%2Fcommit%2F221da776300f714bb9107ba2b0195af3a2b7a45d%0A*+Document+last+modified%3A+2023-08-03T23%3A06%3A17.000Z%0A%0A%3C%2Fdetails%3E"
+                title="This will take you to GitHub to file a new issue."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Report the content issue</a
+              >.
+            </li>
+            <li>
+              <a
+                href="https://github.com/mdn/translated-content/blob/main/files/ru/learn/getting_started_with_the_web/css_basics/index.md?plain=1"
+                title="Folder: ru/learn/getting_started_with_the_web/css_basics (Opens in a new tab)"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View the source on GitHub</a
+              >.
+            </li>
+          </ul>
+          Want to get more involved?<!-- -->
+          <a
+            href="https://github.com/mdn/content/blob/main/CONTRIBUTING.md"
+            title="This will take you to our contribution guidelines on GitHub."
+            target="_blank"
+            rel="noopener noreferrer"
+            >Learn how to contribute</a
+          >.
+        </div>
+        <p class="last-modified-date">
+          This page was last modified on<!-- -->
+          <time datetime="2023-08-03T23:06:17.000Z">4 авг. 2023 г.</time>
+          by<!-- -->
+          <a
+            href="/assets/images/contributors.txt"
+            >MDN contributors</a
+          >.
+        </p>
+      </div>
+    </aside>
+  </article>
+</main>

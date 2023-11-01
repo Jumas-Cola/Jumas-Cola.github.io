@@ -1,0 +1,590 @@
+---
+layout: post
+title: 'Что такое HTML?'
+date: 2023-11-01 22:30:14 +0300
+categories: blog
+---
+
+<main id="content" class="main-content">
+  <article class="main-page-content" lang="ru">
+    <header><h1>Основы HTML</h1></header>
+    <div class="section-content">
+      <p>
+        HTML (Hypertext Markup Language) - это код, который используется для
+        структурирования и отображения веб-страницы и её контента. Например,
+        контент может быть структурирован внутри множества параграфов,
+        маркированных списков или с использованием изображений и таблиц данных.
+        Как видно из названия, эта статья даст вам базовое понимание HTML и его
+        функций.
+      </p>
+    </div>
+    <section aria-labelledby="что_такое_html_на_самом_деле">
+      <h2 id="что_такое_html_на_самом_деле">
+        <a href="#что_такое_html_на_самом_деле"
+          >Что такое HTML на самом деле?</a
+        >
+      </h2>
+      <div class="section-content">
+        <p>
+          HTML не является языком программирования; это <em>язык разметки</em>,
+          и используется, чтобы сообщать вашему браузеру, как отображать
+          веб-страницы, которые вы посещаете. Он может быть сложным или простым,
+          в зависимости от того, как хочет веб-дизайнер. HTML состоит из ряда
+          <strong><a href="/ru/docs/Glossary/Element">элементов</a></strong
+          >, которые вы используете, чтобы вкладывать или оборачивать различные
+          части контента, чтобы заставить контент отображаться или действовать
+          определённым образом. Ограждающие
+          <a href="/ru/docs/Glossary/Tag">теги</a> могут сделать слово или
+          изображение ссылкой на что-то ещё, могут сделать слова курсивом,
+          сделать шрифт больше или меньше и так далее. Например, возьмём
+          следующую строку контента:
+        </p>
+        <pre class="notranslate">
+Моя кошка очень раздражена
+</pre
+        >
+        <p>
+          Если бы мы хотели, чтобы строка стояла сама по себе, мы могли бы
+          указать, что это абзац, заключая его в теги абзаца:
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: html notranslate"
+            data-signature="BWNjhhsQgAntt6DLA8fdSt8wgLk+6FJdtot8R4AIjtY="
+          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Моя кошка очень раздражена<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="анатомия_html_элемента">
+      <h3 id="анатомия_html_элемента">
+        <a href="#анатомия_html_элемента">Анатомия HTML элемента</a>
+      </h3>
+      <div class="section-content">
+        <p>Давайте рассмотрим элемент абзаца более подробно.</p>
+        <p>
+          <img
+            src="/assets/images/grumpy-cat-small.png"
+            alt=""
+            width="821"
+            height="255"
+            loading="lazy"
+          />
+        </p>
+        <p>Главными частями нашего элемента являются:</p>
+        <ol>
+          <li>
+            <strong>Открывающий тег (Opening tag)</strong>: Состоит из имени
+            элемента (в данном случае, "p"), заключённого в открывающие и
+            закрывающие <strong>угловые скобки</strong>. Открывающий тег
+            указывает, где элемент начинается или начинает действовать, в данном
+            случае — где начинается абзац.
+          </li>
+          <li>
+            <strong>Закрывающий тег (Closing tag):</strong> Это то же самое, что
+            и открывающий тег, за исключением того, что он включает в себя косую
+            черту перед именем элемента. Закрывающий элемент указывает, где
+            элемент заканчивается, в данном случае — где заканчивается абзац.
+            Отсутствие закрывающего тега является одной из наиболее
+            распространённых ошибок начинающих и может приводить к странным
+            результатам.
+          </li>
+          <li>
+            <strong>Контент (Content)</strong>: Это контент элемента, который в
+            данном случае является просто текстом.
+          </li>
+          <li>
+            <strong>Элемент(Element)</strong>: Открывающий тег, закрывающий тег
+            и контент вместе составляют элемент.
+          </li>
+        </ol>
+        <p>Элементы также могут иметь атрибуты, которые выглядят так:</p>
+        <p>
+          <img
+            src="/assets/images/grumpy-cat-attribute-small.png"
+            alt=""
+            width="1287"
+            height="156"
+            loading="lazy"
+          />
+        </p>
+        <p>
+          Атрибуты содержат дополнительную информацию об элементе, которую вы не
+          хотите показывать в фактическом контенте. В данном случае, class это
+          <em>имя</em> <em>атрибута,</em> а <code>editor-note</code> это
+          <em>значение атрибута</em>. Класс позволяет дать элементу
+          идентификационное имя, которое может позже использоваться, чтобы
+          обращаться к элементу с информацией о стиле и прочих вещах.
+        </p>
+        <p>Атрибут всегда должен иметь:</p>
+        <ol>
+          <li>
+            Пробел между ним и именем элемента (или предыдущим атрибутом, если
+            элемент уже имеет один или несколько атрибутов).
+          </li>
+          <li>Имя атрибута, за которым следует знак равенства.</li>
+          <li>Значение атрибута, заключённое с двух сторон в кавычки.</li>
+        </ol>
+      </div>
+    </section>
+    <section aria-labelledby="вложенные_элементы">
+      <h3 id="вложенные_элементы">
+        <a href="#вложенные_элементы">Вложенные элементы</a>
+      </h3>
+      <div class="section-content">
+        <p>
+          Вы также можете располагать элементы внутри других элементов — это
+          называется <strong>вложением</strong>. Если мы хотим заявить, что наша
+          кошка <strong>очень</strong> раздражена, мы можем заключить слово
+          "очень" в элемент
+          <a href="/ru/docs/Web/HTML/Element/strong"
+            ><code>&lt;strong&gt;</code></a
+          >
+          , который указывает, что слово должно быть сильно акцентированно:
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: html notranslate"
+            data-signature="qACEsvFioLRjU3uNC+CB8BaxcEG7eBcJaqiuKSCRedg="
+          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Моя кошка <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>очень<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span> раздражена.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+        </div>
+        <p>
+          Вы, однако, должны убедиться, что ваши элементы правильно вложены: в
+          примере выше мы открыли первым элемент
+          <a href="/ru/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a
+          >, затем элемент
+          <a href="/ru/docs/Web/HTML/Element/strong"
+            ><code>&lt;strong&gt;</code></a
+          >, потом мы должны закрыть сначала элемент
+          <a href="/ru/docs/Web/HTML/Element/strong"
+            ><code>&lt;strong&gt;</code></a
+          >, затем
+          <a href="/ru/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a
+          >. Приведённое ниже неверно:
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: html example-bad notranslate"
+            data-signature="AJscVQ7XxaDXj7J51TQlKtkD3wrSZJckvuBrank24yw="
+          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Моя кошка <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>очень раздражена.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+        </div>
+        <p>
+          Элементы должны открываться и закрываться правильно, поэтому они явно
+          располагаются внутри или снаружи друг друга. Если они перекрываются,
+          как в примере выше, ваш веб-браузер будет пытаться сделать наилучшее
+          предположение на основе того, что вы пытались сказать, что может
+          привести к неожиданным результатам. Так что не стоит этого делать!
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="пустые_элементы">
+      <h3 id="пустые_элементы">
+        <a href="#пустые_элементы">Пустые элементы</a>
+      </h3>
+      <div class="section-content">
+        <p>
+          Некоторые элементы не имеют контента, и называются
+          <strong>пустыми элементами</strong>. Возьмём элемент
+          <a href="/ru/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a
+          >, который уже имеется в нашем HTML:
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: html notranslate"
+            data-signature="703iN/cP5cp7FkEXZx2NE6A/24YwIp0vseYGLvuctDk="
+          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>images/firefox-icon.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Моё тестовое изображение<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre>
+        </div>
+        <p>
+          Он содержит два атрибута, но не имеет закрывающего тега
+          <code>&lt;/img&gt;</code>, и никакого внутреннего контента. Это
+          потому, что элемент изображения не оборачивает контент для влияния на
+          него. Его целью является вставка изображения в HTML страницу в нужном
+          месте.
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="анатомия_html_документа">
+      <h3 id="анатомия_html_документа">
+        <a href="#анатомия_html_документа">Анатомия HTML документа</a>
+      </h3>
+      <div class="section-content">
+        <p>
+          Мы завершили изучение основ отдельных HTML элементов, но они не очень
+          полезны сами по себе. Теперь мы посмотрим, как отдельные элементы
+          объединяются в целую HTML страницу. Давайте вернёмся к коду, который
+          мы записывали в наш <code>index.html</code> (с которым мы впервые
+          встретились в статье
+          <a
+            href="/ru/docs/Learn/Getting_started_with_the_web/Dealing_with_files"
+            >Работа с файлами</a
+          >):
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: html notranslate"
+            data-signature="8Eg1tTUptwEQs8rwmAp56ACgtoVSFHBKIGA+xDk4To4="
+          ><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">doctype</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Моя тестовая страница<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>images/firefox-icon.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Моё тестовое изображение<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+        </div>
+        <p>Здесь мы имеем:</p>
+        <ul>
+          <li>
+            <code>&lt;!DOCTYPE html&gt;</code> — доктайп. В прошлом, когда HTML
+            был молод (около 1991/1992), доктайпы должны были выступать в
+            качестве ссылки на набор правил, которым HTML страница должна была
+            следовать, чтобы считаться хорошим HTML, что могло означать
+            автоматическую проверку ошибок и другие полезные вещи. Однако в наши
+            дни, никто не заботится об этом, и они на самом деле просто
+            исторический артефакт, который должен быть включён для того, что бы
+            все работало правильно. На данный момент это все, что вам нужно
+            знать.
+          </li>
+          <li>
+            <code>&lt;html&gt;&lt;/html&gt;</code> — элемент
+            <a href="/ru/docs/Web/HTML/Element/html"
+              ><code>&lt;html&gt;</code></a
+            >. Этот элемент оборачивает весь контент на всей странице, и иногда
+            известен как корневой элемент.
+          </li>
+          <li>
+            <code>&lt;head&gt;&lt;/head&gt;</code> — элемент
+            <a href="/ru/docs/Web/HTML/Element/head"
+              ><code>&lt;head&gt;</code></a
+            >. Этот элемент выступает в качестве контейнера для всего, что вы
+            пожелаете включить на HTML страницу, но
+            <em>не являющегося</em> контентом, который вы показываете
+            пользователям вашей страницы. К ним относятся такие вещи, как
+            ключевые слова и описание страницы, которые будут появляться в
+            результатах поиска, CSS стили нашего контента, кодировка и многое
+            другое.
+          </li>
+          <li>
+            <code>&lt;body&gt;&lt;/body&gt;</code> — элемент
+            <a href="/ru/docs/Web/HTML/Element/body"
+              ><code>&lt;body&gt;</code></a
+            >. В нем содержится <em>весь</em> контент, который вы хотите
+            показывать пользователям, когда они посещают вашу страницу, будь то
+            текст, изображения, видео, игры, проигрываемые аудиодорожки или
+            что-то ещё.
+          </li>
+          <li>
+            <code>&lt;meta charset="utf-8"&gt;</code> — этот элемент
+            устанавливает UTF-8 кодировку вашего документа, которая включает в
+            себя большинство символов из всех известных человечеству языков. По
+            сути, теперь документ может обрабатывать любой текстовый контент,
+            который вы в него вложите. Нет причин не устанавливать её, так как
+            это может помочь избежать некоторых проблем в дальнейшем.
+          </li>
+          <li>
+            <code>&lt;title&gt;&lt;/title&gt;</code> — элемент
+            <a href="/ru/docs/Web/HTML/Element/title"
+              ><code>&lt;title&gt;</code></a
+            >. Этот элемент устанавливает заголовок для вашей страницы, который
+            является названием, появляющимся на вкладке браузера загружаемой
+            страницы, и используется для описания страницы, когда вы добавляете
+            её в закладки/избранное.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section aria-labelledby="изображения">
+      <h2 id="изображения"><a href="#изображения">Изображения</a></h2>
+      <div class="section-content">
+        <p>
+          Давайте снова обратим наше внимание на элемент
+          <a href="/ru/docs/Web/HTML/Element/img">изображения</a>:
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: html notranslate"
+            data-signature="/ogfXLyOg1PEJGF7OLFGb80XXcXvTA4+puwxchq8190="
+          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>images/firefox-icon.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Mоё тестовое изображение<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre>
+        </div>
+        <p>
+          Как было сказано раньше, код встраивает изображение на нашу страницу в
+          нужном месте. Это делается с помощью атрибута
+          <code>src</code> (source, источник), который содержит путь к нашему
+          файлу изображения.
+        </p>
+        <p>
+          Мы также включили атрибут <code>alt</code> (alternative,
+          альтернатива). В этом атрибуте, вы указываете поясняющий текст для
+          пользователей, которые не могут увидеть изображение, возможно, по
+          следующим причинам:
+        </p>
+        <ol>
+          <li>
+            У них присутствуют нарушения зрения. Пользователи со значительным
+            нарушением зрения часто используют инструменты, называемые Screen
+            Readers (экранные дикторы), которые читают для них альтернативный
+            текст.
+          </li>
+          <li>
+            Что-то пошло не так, в результате чего изображение не отобразилось.
+            Например, попробуйте намеренно изменить путь в вашем атрибуте
+            <code>src</code>, сделав его неверным. Если вы сохраните и
+            перезагрузите страницу, то вы должны увидеть что-то подобное вместо
+            изображения:
+          </li>
+        </ol>
+        <p>
+          <img
+            src="/assets/images/alt-text-example.png"
+            alt=""
+            width="108"
+            height="36"
+            loading="lazy"
+          />
+        </p>
+        <p>
+          Альтернативный текст - это "пояснительный текст". Он должен
+          предоставить читателю достаточно информации, чтобы иметь представление
+          о том, что передаёт изображение. В этом примере наш текст "My test
+          image" ("Моё тестовое изображение") не годится. Намного лучшей
+          альтернативой для нашего логотипа Firefox будет "The Firefox logo: a
+          flaming fox surrounding the Earth" ("Логотип Firefox: огненный Лис
+          вокруг Земли").
+        </p>
+        <p>
+          Сейчас попробуйте придумать более подходящий альтернативный текст для
+          вашего изображения.
+        </p>
+        <div class="notecard note" id="sect1">
+          <p>
+            <strong>Примечание:</strong> Узнайте больше о
+            <a href="/ru/docs/Web/Accessibility">специальных возможностях</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="разметка_текста">
+      <h2 id="разметка_текста">
+        <a href="#разметка_текста">Разметка текста</a>
+      </h2>
+      <div class="section-content">
+        <p>
+          В этом разделе рассмотрим некоторые из основных HTML элементов,
+          которые вы будете использовать для разметки текста.
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="заголовки">
+      <h3 id="заголовки"><a href="#заголовки">Заголовки</a></h3>
+      <div class="section-content">
+        <p>
+          Элементы заголовка позволяют вам указывать определённые части вашего
+          контента в качестве заголовков или подзаголовков. Точно так же, как
+          книга имеет название, названия глав и подзаголовков, HTML документ
+          может содержать то же самое. HTML включает шесть уровней заголовков
+          <a
+            class="only-in-en-us"
+            title="Currently only available in English (US)"
+            href="/en-US/docs/Web/HTML/Element/Heading_Elements"
+            ><code>&lt;h1&gt;</code> <small>(en-US)</small></a
+          >–<a
+            class="only-in-en-us"
+            title="Currently only available in English (US)"
+            href="/en-US/docs/Web/HTML/Element/Heading_Elements"
+            ><code>&lt;h6&gt;</code> <small>(en-US)</small></a
+          >, хотя обычно вы будете использовать не более 3-4 :
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: html notranslate"
+            data-signature="/DxCrFs6hdyOxWwvrRWSsYlRAjGS3MQybJ3JZm5Uytk="
+          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Мой главный заголовок<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Мой заголовок верхнего уровня<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Мой подзаголовок<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Мой под-подзаголовок<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+        </div>
+        <p>
+          Теперь попробуйте добавить подходящее название для вашей HTML
+          страницы, чуть выше элемента
+          <a href="/ru/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a
+          >.
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="абзацы">
+      <h3 id="абзацы"><a href="#абзацы">Абзацы</a></h3>
+      <div class="section-content">
+        <p>
+          Как было сказано раньше, элемент
+          <a href="/ru/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a>
+          предназначен для абзацев текста; вы будете использовать их регулярно
+          при разметке текстового контента:
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: html notranslate"
+            data-signature="AaXRgrwEcBgkGALdsLwoA0iiUZIVKwaAAyCaEvYerYk="
+          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Это одиночный абзац<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+        </div>
+        <p>
+          Добавьте свой образец текста (вы создавали его в статье
+          <a
+            href="/ru/docs/Learn/Getting_started_with_the_web/What_should_your_web_site_be_like"
+            ><em>Каким должен быть ваш веб-сайт?</em></a
+          >) в один или несколько абзацев, расположенных прямо под элементом
+          <a href="/ru/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a
+          >.
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="списки">
+      <h3 id="списки"><a href="#списки">Списки</a></h3>
+      <div class="section-content">
+        <p>
+          Большая часть веб-контента является списками и HTML имеет специальные
+          элементы для них. Разметка списка всегда состоит по меньшей мере из
+          двух элементов. Наиболее распространёнными типами списков являются
+          нумерованные и ненумерованные списки:
+        </p>
+        <ol>
+          <li>
+            <strong>Ненумерованные списки</strong> - это списки, где порядок
+            пунктов не имеет значения, как в списке покупок. Они оборачиваются в
+            элемент
+            <a href="/ru/docs/Web/HTML/Element/ul"><code>&lt;ul&gt;</code></a
+            >.
+          </li>
+          <li>
+            <strong>Нумерованные списки -</strong> это списки, где порядок
+            пунктов имеет значение, как в рецепте. Они оборачиваются в элемент
+            <a href="/ru/docs/Web/HTML/Element/ol"><code>&lt;ol&gt;</code></a
+            >.
+          </li>
+        </ol>
+        <p>
+          Каждый пункт внутри списков располагается внутри элемента
+          <a href="/ru/docs/Web/HTML/Element/li"><code>&lt;li&gt;</code></a>
+          (list item, элемент списка).
+        </p>
+        <p>
+          Например, если мы хотим включить часть следующего фрагмента абзаца в
+          список:
+        </p>
+        <div class="code-example">
+          <pre
+            class="brush: html notranslate"
+            data-signature="46OZVvICK3mB2hsoD6UXzPdUk7J+7wv+oJ2IWqac6IE="
+          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+Mozilla, мы являемся мировым сообществом технологов, мыслителей и строителей,
+    работающих вместе ...
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    </code></pre>
+        </div>
+        <p>Мы могли бы изменить разметку на эту:</p>
+        <div class="code-example">
+          <pre
+            class="brush: html notranslate"
+            data-signature="1cniIhdDTWgdKVe4w0Ls7PAJNm7kcTWT3RPRjVlQ5TE="
+          ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Mozilla, мы являемся мировым сообществом<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>технологов<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>мыслителей<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>строителей<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>работающих вместе ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    </code></pre>
+        </div>
+
+        <p>
+          Попробуйте добавить упорядоченный или неупорядоченный список на свою
+          страницу.
+        </p>
+      </div>
+    </section>
+    <section aria-labelledby="ссылки">
+      <h2 id="ссылки"><a href="#ссылки">Ссылки</a></h2>
+      <div class="section-content">
+        <p>
+          Ссылки очень важны — это то, что делает Интернет Интернетом. Чтобы
+          добавить ссылку, нам нужно использовать простой элемент —
+          <a href="/ru/docs/Web/HTML/Element/a"><code>&lt;a&gt;</code></a> —
+          <em>a</em> это сокращение от "anchor" ("якорь"). Чтобы текст в вашем
+          абзаце стал ссылкой, выполните следующие действия:
+        </p>
+        <ol>
+          <li>
+            Выберите некоторый текст. Мы выбрали текст "Манифест Mozilla".
+          </li>
+          <li>
+            Оберните текст в элемент
+            <a href="/ru/docs/Web/HTML/Element/a"><code>&lt;a&gt;</code></a
+            >, например так:
+            <div class="code-example">
+              <pre
+                class="brush: html notranslate"
+                data-signature="1QMxTOiLB82ycLzSxEE6q9KHOfVUDY15Xdp8qHmBZZE="
+              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">&gt;</span></span>Манифест Mozilla<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    </code></pre>
+            </div>
+          </li>
+          <li>
+            Задайте элементу
+            <a href="/ru/docs/Web/HTML/Element/a"><code>&lt;a&gt;</code></a>
+            атрибут href, например так:
+            <div class="code-example">
+              <pre
+                class="brush: html notranslate"
+                data-signature="x0N5nH/TU2WkonxRrZZn7H050eeFPWGbUJqwhr5Hfgw="
+              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Манифест Mozilla<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    </code></pre>
+            </div>
+          </li>
+          <li>
+            Заполните значение этого атрибута веб-адресом, на который вы хотите
+            указать ссылку:
+            <div class="code-example">
+              <pre
+                class="brush: html notranslate"
+                data-signature="TvoUIN29YgZ1j+7s2uDXYIXKUOJ3tWbKhU7gd9/HU08="
+              ><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.mozilla.org/ru/about/manifesto/details/<span class="token punctuation">"</span></span>
+    <span class="token punctuation">&gt;</span></span>Манифест Mozilla<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span>
+    <span class="token punctuation">&gt;</span></span>
+    </code></pre>
+            </div>
+          </li>
+        </ol>
+        <p>
+          Вы можете получить неожиданные результаты, если в самом начале
+          веб-адреса вы опустите <code>https://</code> или
+          <code>http://</code> часть, называемую <em>протоколом</em>. После
+          создания ссылки, кликните по ней, чтобы убедиться, что она направляет
+          вас туда, куда вы хотели.
+        </p>
+        <div class="notecard note" id="sect2">
+          <p>
+            <strong>Примечание:</strong> <code>href</code> сначала может
+            выглядеть довольно непонятым выбором для имени атрибута. Если у вас
+            возникли проблемы с тем, чтобы запомнить его, можете запомнить, что
+            атрибут href образуется как
+            <em><strong>h</strong>ypertext <strong>ref</strong>erence</em>
+            ("гипертекстовая ссылка").
+          </p>
+        </div>
+        <p>
+          Теперь добавьте ссылку на вашу страницу, если вы ещё не сделали этого.
+        </p>
+      </div>
+    </section>
+  </article>
+</main>
