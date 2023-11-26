@@ -18,10 +18,36 @@ permalink: /about/
     <li>Каскадные таблицы стилей. (CSS)</li>
 </ol>
 
-<button class="btn btn-info" type="button" onclick="alert('Подписка на рассылку')">
+<button class="btn btn-info" type="button" id="button">
 Подписаться на рассылку
 </button>
 
 <script>
-    console.log('123')
+document.getElementById('button').addEventListener("click", () => {
+    const btn = document.getElementById('button');
+    btn.classList.add('rotate');
+    setTimeout(() => {
+        btn.classList.remove('rotate');
+    }, 1000);
+});
 </script>
+
+<style>
+.rotate {
+    -webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;
+}
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+</style>
